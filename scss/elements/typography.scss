@@ -1,0 +1,193 @@
+/* Typography
+ ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap");
+
+@font-face {
+  font-family: "Tomorrow";
+  src: url("/fonts/Tomorrow-Regular.woff2") format("woff2"),
+    url("/fonts/Tomorrow-Regular.woff") format("woff"),
+    url("/fonts/Tomorrow-Regular.ttf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "hudson";
+  src: url("/fonts/HudsonNY.woff2") format("woff2"),
+    url("/fonts/HudsonNY.woff") format("woff");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+$headlineFont: "Rajdhani";
+$bodyFont: "Tomorrow";
+
+html {
+  font-size: 18px;
+  background: #2e3443;
+}
+body {
+  line-height: 1.7;
+  background: var(--g4);
+  background-attachment: fixed;
+  color: #fff;
+  font-family: $bodyFont;
+  position: relative;
+  z-index: 1;
+}
+a {
+  color: #fff;
+  font-family: $headlineFont;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 350ms ease-in-out;
+  &:hover {
+    color: var(--yellow);
+  }
+}
+h1 {
+  font-size: 40px;
+  font-family: $headlineFont;
+  letter-spacing: -0.8px;
+  line-height: 1;
+  font-weight: 700;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  @include bp-medium {
+    font-size: 48px;
+  }
+}
+
+@keyframes boxin {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 27%;
+  }
+}
+@keyframes boxin2 {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 74%;
+  }
+}
+h2 {
+  line-height: 1.25;
+  font-family: $headlineFont;
+  letter-spacing: -0.6px;
+  font-size: 28px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  display: inline-block;
+  // @include bp-medium {
+  // 	font-size: 32px;
+  // 	letter-spacing: -0.7px;
+  // }
+}
+
+section {
+  h2 {
+    margin-bottom: 32px;
+    text-transform: uppercase;
+    display: block;
+  }
+}
+
+h3 {
+  font-family: $bodyFont;
+  font-size: 24px;
+  line-height: 1.21;
+  letter-spacing: -0.5px;
+  margin: 16px 0;
+  font-weight: bold;
+}
+
+h4 {
+  font-family: $headlineFont;
+  line-height: 1.25;
+  font-size: 18px;
+
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+h5 {
+  font-family: $headlineFont;
+  font-size: 14px;
+  line-height: 1.21;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+h6 {
+  font-family: $headlineFont;
+  font-size: 14px;
+  line-height: 1.21;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+.f-l {
+  font-size: 20px;
+}
+.f-s {
+  font-size: 14px;
+}
+.display {
+  font-size: 48px;
+  line-height: 1;
+  @include bp-medium {
+    font-size: 64px;
+  }
+  &.invert {
+    background: #fff;
+    color: #fff;
+    padding: 0 16px 4px 4px;
+    display: inline-block;
+    background: var(--c5);
+    clip-path: polygon(
+      100% 0,
+      100% calc(100% - 16px),
+      calc(100% - 16px) 100%,
+      0 100%,
+      0 0
+    );
+    margin-bottom: 0;
+  }
+}
+.list_style {
+  ul {
+    padding-left: 24px;
+    list-style: disc;
+    margin-bottom: 16px;
+  }
+  li {
+    line-height: 1.5;
+  }
+}
+.button {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: 0.6px;
+  color: #000;
+}
+.navbar-link {
+  font-size: 14px;
+  line-height: 1.29;
+  font-weight: bold;
+  color: #000;
+  &:hover {
+    color: lighten(#000, 30%);
+  }
+}
