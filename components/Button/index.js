@@ -1,8 +1,6 @@
 import React from "react";
 import Link from "next/link";
 
-import styles from "./Button.module.scss";
-
 const Button = ({
   className = "",
   children,
@@ -15,19 +13,9 @@ const Button = ({
     .replace(/[^a-z]+/g, "")
     .substr(0, 2);
 
-  // "btn--primary"
-  // "btn--secondary"
-  // "btn--cta"
-  // "btn-ghost"
-  // "btn--link"
-
   if (type === "button") {
     return (
-      <button
-        onClick={onClick}
-        type={type}
-        className={"btn button " + className}
-      >
+      <button onClick={onClick} type={type} className={"btn " + className}>
         <span className="btn__content">{children ? children : ""} </span>
         <span className="btn__glitch"></span>
         <span className="btn__label">{buttonLable}20</span>
@@ -36,27 +24,15 @@ const Button = ({
   }
   if (type === "link") {
     return (
-      <Link href={to} className={"btn " + className}>
-        <>
+      <Link href={to}>
+        <button onClick={onClick} type={type} className={"btn " + className}>
           <span className="btn__content">{children ? children : ""} </span>
           <span className="btn__glitch"></span>
           <span className="btn__label">{buttonLable}20</span>
-        </>
+        </button>
       </Link>
     );
   }
 };
 
 export default Button;
-
-// <a>
-//     Type:
-//         internal "btn--link"
-//         external    "btn--link--external"
-//         link-in-text "btn--link"
-// </a>
-// <Button>
-//     Type:
-//         submit
-//         button
-// </Button>

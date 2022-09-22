@@ -21,8 +21,8 @@ const Award = () => {
         <h2 className="title yellow">Awards</h2>
       </InViewMonitor>
       <div className="wrapper">
-        <div className="awards-container">
-          <div className="Awards">
+        <div className={styles.awardsContainer}>
+          <div className={styles.Awards}>
             <InViewMonitor
               intoViewMargin="10%"
               classNameNotInView="vis-hidden"
@@ -30,14 +30,13 @@ const Award = () => {
               toggleClassNameOnInView
             >
               <Image alt="Svenska design" className="award-img" src={image2} />
-              <div className="content">
+              <div className={styles.awdContent}>
                 <h3>Svenska design</h3>
                 Gold Category Digital Design
                 <br />
               </div>
               <Button
                 className="btn btn--b btn--link"
-                type="link"
                 to="/portfolio/malmo-saluhall/"
               >
                 View project
@@ -45,8 +44,8 @@ const Award = () => {
             </InViewMonitor>
           </div>
         </div>
-        <div className="awards-container">
-          <div className="Awards">
+        <div className={styles.awardsContainer}>
+          <div className={styles.Awards}>
             <InViewMonitor
               intoViewMargin="10%"
               classNameNotInView="vis-hidden"
@@ -68,8 +67,8 @@ const Award = () => {
             </InViewMonitor>
           </div>
         </div>
-        <div className="awards-container">
-          <div className="Awards">
+        <div className={styles.awardsContainer}>
+          <div className={styles.Awards}>
             <InViewMonitor
               intoViewMargin="10%"
               classNameNotInView="vis-hidden"
