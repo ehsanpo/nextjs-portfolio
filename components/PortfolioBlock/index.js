@@ -4,6 +4,7 @@ import Box from "../Box";
 import Button from "../Button";
 
 const Index = ({ data, onHome = false }) => {
+
 	return (
 		<section className={`${!onHome && "no-bg"}`}>
 			{onHome && (
@@ -21,7 +22,7 @@ const Index = ({ data, onHome = false }) => {
 
 			<div className="wrapper">
 				{data.map((Onode) => {
-					const node = Onode.node.frontmatter;
+					const node = Onode.data;
 					return <Box key={node.id} node={node} />;
 				})}
 			</div>

@@ -10,20 +10,21 @@ import Parallax from "../components/ParallaxImage";
 import Hero from "../components/Hero";
 import PortfolioBlock from "../components/PortfolioBlock";
 import fs from "fs";
-
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
 import matter from "gray-matter";
 
 import Image from "next/image";
 
 import Link from "next/link";
 
-const IndexPage = ({ data }) => {
-  const portfolioBlockData = data?.allMarkdownRemark.edges;
+const IndexPage = ({ portfolioBlockData }) => {
+
   return (
     <Layout>
       <SeO title="Digital Developer" />
       <Hero />
-      {/* <PortfolioBlock data={portfolioBlockData} onHome /> */}
+      <PortfolioBlock data={portfolioBlockData} onHome /> 
       <section className="no-bg">
         <InViewMonitor
           intoViewMargin="6%"
@@ -63,9 +64,29 @@ const IndexPage = ({ data }) => {
 
 export default IndexPage;
 export async function getStaticProps() {
-  const files = fs.readdirSync("Content");
-  console.log(files);
-  return { props: { files: files } };
+  const files = fs.readdirSync("Content/Portfolio");
+  const posts = files.map((fileName) => {
+    const slug = fileName.replace('.md', '');
+    const readFile = fs.readFileSync(`Content/Portfolio/${fileName}/${fileName}.md`, 'utf-8');
+    const { data: frontmatter } = matter(readFile);
+    console.log(frontmatter.permalink);
+    // if(typeof frontmatter.logo !== "undefined" && frontmatter.type=== "portfolio" ){
+    
+
+    // }
+    //const image = require('../Content' + frontmatter.permalink + '/' + frontmatter.logo[0])
+    // else{
+    //  const  image= ""
+    // }
+    // console.log('ep',image)
+    return {
+      slug: frontmatter.permalink,
+      data:frontmatter,
+    };
+
+  });
+  let sources = posts.filter(post => post.data.onHome === true)
+  return { props: { portfolioBlockData:sources } };
   // Get all our posts
 }
 

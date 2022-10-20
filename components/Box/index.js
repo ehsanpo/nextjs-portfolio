@@ -10,31 +10,36 @@ function onlyCapitalLetters(str) {
 
 const Box = ({ node, image }) => {
   const { id, title, tag, permalink, category, logo } = node;
+  
   return (
-    <Link href={permalink} className="box">
-      <span className="box__glitch"></span>
-      <div className="header">
-        <span>{id}</span>{" "}
-        {category.map((cat) => (
-          <>{onlyCapitalLetters(cat)} </>
-        ))}
-      </div>
-      <hr />
-      <div className="box-wrapper">
-        {logo && (
-          <Image
-            objectFit="contain"
-            className="portfolio-image-thumb"
-            image={logo[0]?.childImageSharp.gatsbyImageData}
-          />
-        )}
-        <h3>{title}</h3>
-        <div className="tags">
-          {tag.slice(0, 3).map((tag) => (
-            <span key={tag}>{tag}</span>
+    <Link href={permalink} >
+      <a className="box">
+        <span className="box__glitch"></span>
+        <div className="header">
+          <span>{id}</span>{" "}
+          {category.map((cat) => (
+            <>{onlyCapitalLetters(cat)} </>
           ))}
         </div>
-      </div>
+        <hr />
+        <div className="box-wrapper">
+           {logo && (
+            <Image
+              objectFit="contain"
+              className="portfolio-image-thumb"
+              src={'/images' + permalink + '/' + logo[0] }
+              width="200"
+              height="170"
+            /> 
+           )} 
+          <h3>{title}</h3>
+          <div className="tags">
+            {tag.slice(0, 3).map((tag) => (
+              <span key={tag}>{tag}</span>
+            ))}
+          </div>
+        </div>
+      </a>
     </Link>
   );
 };

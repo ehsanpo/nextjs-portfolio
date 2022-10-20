@@ -3,16 +3,20 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "copyimages": "node ./bin/copy-images.mjs",
+    "prebuild": "npm run copyimages"
   },
   "dependencies": {
     "@codersrank/skills-chart": "^0.9.21",
     "@loadable/component": "^5.15.2",
     "chart.js": "^3.9.1",
     "fs": "^0.0.1-security",
+    "fs-extra": "^10.1.0",
     "gray-matter": "^4.0.3",
     "hover-effect": "^1.1.0",
     "next": "latest",
+    "next-mdx-remote": "^4.1.0",
     "prop-types": "^15.8.1",
     "react": "17.0.2",
     "react-chartjs-2": "^4.3.1",
