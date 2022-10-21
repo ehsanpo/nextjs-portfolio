@@ -10,11 +10,12 @@ function onlyCapitalLetters(str) {
 
 const Box = ({ node, image }) => {
   const { id, title, tag, permalink, category, logo } = node;
-  
+
   return (
     <Link href={permalink} >
-      <a className="box">
+      <a className={style.box}>
         <span className="box__glitch"></span>
+        {/* <div className={style.box.header}> */}
         <div className="header">
           <span>{id}</span>{" "}
           {category.map((cat) => (

@@ -37,33 +37,33 @@ const Header = ({ siteTitle }) => {
         <nav className={`${headerButton ? "open" : ""}`}>
           <ol>
             <li>
-              <Link className="btn--link" href="/">
-                Home
+              <Link href="/">
+                <a className="btn--link">Home</a>
               </Link>
             </li>
             <li>
               <Link className="btn--link" href="/portfolio">
-                Portfolio
+              <a className="btn--link">Portfolio</a>
               </Link>
             </li>
             <li>
-              <Link className="btn--link" href="/music">
-                Music
+              <Link href="/music">
+              <a className="btn--link">Music</a>
               </Link>
             </li>
             <li>
-              <Link className="btn--link" href="/blog">
-                Writing
+              <Link href="/blog">
+              <a className="btn--link">Writing</a>
               </Link>
             </li>
             <li>
-              <Link className="btn--link" href="/skills">
-                Skills
+              <Link href="/skills">
+              <a className="btn--link">Skills</a>
               </Link>
             </li>
             <li>
-              <Link className="btn--link" href="/about">
-                About
+              <Link href="/about">
+              <a className="btn--link">About</a>
               </Link>
             </li>
           </ol>

@@ -6,15 +6,16 @@
   min-height: 500px;
   padding: 0;
   clip-path: none;
-  .wrapper {
-    height: 100%;
-  }
+
   h1 {
     margin: 0;
   }
   h2 {
     margin: 0;
   }
+}
+.heroWrapper {
+  height: 100%;
 }
 .intro {
   max-width: 90%;

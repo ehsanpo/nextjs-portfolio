@@ -5,7 +5,7 @@ import logo from "./logo.svg";
 const Hero = () => {
   return (
     <section className={style.hero}>
-      <div className="wrapper">
+      <div className={style.heroWrapper + " wrapper"}>
         <div className="v-center--f">
           <img alt="EP Logo" className={style.logo} src="logo.svg" />
           <h1 className="display">Ehsan Pourhadi</h1>
