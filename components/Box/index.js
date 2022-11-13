@@ -20,7 +20,7 @@ const Box = ({ node, image, children, headline = "", empty = false }) => {
     );
   }
 
-  const { id, title, tag, permalink, category, logo } = node;
+  const { id, title, tag, permalink, category, logo, fileName } = node;
   return (
     <Link href={permalink}>
       <a className={style.box}>
@@ -37,7 +37,7 @@ const Box = ({ node, image, children, headline = "", empty = false }) => {
             <div className={style.portfolioImageThumb}>
               <Image
                 objectFit="contain"
-                src={"/images" + permalink + "/" + logo[0]}
+                src={"/images/portfolio/" + fileName + "/" + logo[0]}
                 width="250"
                 height="170"
               />

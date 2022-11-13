@@ -8,10 +8,10 @@ import Box from "../Box/EmptyBox";
 import NextImage from "next/future/image";
 
 const IndexPage = ({ data, content }) => {
-  console.log(data);
+  // console.log(data);
 
   const portfolioBlockData = data;
-  const { permalink } = data;
+  const permalink = "/images/portfolio/" + data.fileName + "/";
   const portfolioBlockBody = content;
   const [headerClose, setHeaderClose] = useState("");
 
@@ -37,8 +37,6 @@ const IndexPage = ({ data, content }) => {
     }, 1000);
   }, []);
 
-  console.log(data);
-  // console.log(pageContext);
   return (
     <Layout>
       <Seo title={portfolioBlockData.title} />
@@ -62,11 +60,11 @@ const IndexPage = ({ data, content }) => {
               {portfolioBlockData.logo && (
                 <Image
                   objectFit="cover"
-                  alt="test"
+                  // alt="test"
                   className="portfolio-image"
                   width={350}
                   height={216}
-                  src={"/images" + permalink + "/" + portfolioBlockData.logo[0]}
+                  src={permalink + portfolioBlockData.logo[0]}
                 />
               )}
             </div>
@@ -87,13 +85,8 @@ const IndexPage = ({ data, content }) => {
           <Image
             className="portfolio-image"
             layout="fill"
-            objectFit='cover'
-            src={
-              "/images" +
-              permalink +
-              "/" +
-              portfolioBlockData.background_image[0]
-            }
+            objectFit="cover"
+            src={permalink + portfolioBlockData.background_image[0]}
           />
 
           <div className="portfolio-header-bot">
@@ -157,11 +150,10 @@ const IndexPage = ({ data, content }) => {
                   }
                 >
                   <div className="tags">
-                  {portfolioBlockData.tag.map((tag) => (
-                    <span key={tag}>{tag} </span>
-                  ))}
+                    {portfolioBlockData.tag.map((tag) => (
+                      <span key={tag}>{tag} </span>
+                    ))}
                   </div>
-                
                 </Box>
               </div>
               <div className=" gallery-wrapper">
@@ -202,11 +194,8 @@ const IndexPage = ({ data, content }) => {
                         // }}
                         // width={1200}
 
-                        layout="fill"
-                        // objectFit='contain'
-                        objectFit="none"
                         fill
-                        src={"/images" + permalink + "/" + bild}
+                        src={permalink + bild}
                       />
                     </div>
                   ))}

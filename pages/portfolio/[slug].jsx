@@ -22,7 +22,7 @@ export async function getStaticProps({ params: { slug } }) {
   );
   const { data: data, content } = matter(fileName);
 
-  console.log(content);
+
   return {
     props: {
       data,
@@ -32,6 +32,6 @@ export async function getStaticProps({ params: { slug } }) {
 }
 
 export default function PostPage({ data }) {
-  console.log(data);
+
   return <Template data={data} />;
 }

@@ -1,6 +1,6 @@
 ---
 title: Clever
-date: '2019-04-08T13:20:50+00:00'
+date: '2018-04-08T13:20:50+00:00'
 status: publish
 permalink: /portfolio/clever
 author: Ehsan

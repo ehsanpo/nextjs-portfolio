@@ -2,8 +2,10 @@ import React from "react";
 import Layout from "../components/layout";
 import SeO from "../components/seo";
 import PortfolioBlock from "../components/PortfolioBlock";
+import fs from "fs";
+import matter from "gray-matter";
 
-const Portfolio = ({ data }) => {
+const Portfolio = ({ portfolioBlockData }) => {
   return (
     <Layout>
       <SeO title="Developer Portfolio" />
@@ -28,11 +30,33 @@ const Portfolio = ({ data }) => {
           </div>
         </div>
       </section>
-      {/* <PortfolioBlock data={data.allMarkdownRemark.edges} /> */}
+      <PortfolioBlock data={portfolioBlockData} />
     </Layout>
   );
 };
 export default Portfolio;
+
+export async function getStaticProps() {
+  const files = fs.readdirSync("Content/Portfolio");
+  const posts = files.map((fileName) => {
+    const slug = fileName.replace(".md", "");
+    const readFile = fs.readFileSync(
+      `Content/Portfolio/${fileName}/${fileName}.md`,
+      "utf-8"
+    );
+    const { data: frontmatter } = matter(readFile);
+    frontmatter.fileName = fileName;
+    return {
+      slug: frontmatter.permalink,
+      data: frontmatter,
+    };
+  });
+
+  const sortedpost =  posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
+  console.log('date', sortedpost[0])
+  return { props: { portfolioBlockData: sortedpost } };
+  // Get all our posts
+}
 
 // export const query = graphql`
 // 	query AllPortfolioBlock {
