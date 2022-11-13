@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Stack.module.scss";
+import style from "./Stack.module.scss";
 
 const Stack = ({ type = "nodejs" }) => {
   const types = {
@@ -27,10 +27,10 @@ const Stack = ({ type = "nodejs" }) => {
   let toRender = types[type];
 
   return (
-    <div className="stackholder">
+    <div className={style.stackholder}>
       <img alt={toRender.headline} src={toRender.icon} />
       <h3>{toRender.headline}</h3>
-      <div className="stacks">
+      <div  className={style.stacks} >
         <ul>
           {toRender.tools.map((t) => (
             <li key={t}>{t}</li>

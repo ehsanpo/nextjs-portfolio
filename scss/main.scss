@@ -8,10 +8,6 @@
 @import "elements/footer.scss";
 @import "layout/layout.scss";
 
-.box:hover .box__glitch {
-  display: block;
-  animation: glitch-animation 1s linear 0s infinite;
-}
 
 :root {
   --boxColor: var(--p1);
@@ -24,17 +20,7 @@
 img {
   max-width: 100%;
 }
-.box__glitch {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--boxColor);
-  filter: drop-shadow(-2px 3px #67e3f3) drop-shadow(-1px -3px #02d8f3)
-    drop-shadow(2px 1px #02d8f3);
-}
+
 
 section {
   padding: 128px 0;

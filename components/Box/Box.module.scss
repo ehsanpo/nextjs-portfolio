@@ -1,19 +1,3 @@
-
-
-.boxHeader{
-  font-size: 16px;
-  background: var(--boxColor);
-  display: inline-block;
-  color: var(--p2);
-  padding: 2px 16px 1px 6px;
-  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0% 100%);
-  transition: all 300ms ease-in-out;
-  vertical-align: bottom;
-  margin-bottom: -1px;
-  span {
-    padding: 0px 2px;
-  }
-}
 .box {
   font-family: "Tomorrow";
   position: relative;
@@ -27,25 +11,51 @@
   &.box--max {
     max-width: 100%;
   }
-  & .header {
-
-  }
   &:hover {
     h3 {
       //letter-spacing: 1px;
       text-shadow: 0 0 1px;
       color: var(--boxHover);
     }
-    .header,
+    .boxHeader,
     hr {
       background: var(--boxHover);
     }
-    .header span {
+    .boxHeader span {
       background: var(--p2);
     }
     .tags span,
     span {
       color: var(--boxHover);
+    }
+    .box__glitch {
+      display: block;
+      animation: glitch-animation 1s linear 0s infinite;
+    }
+  }
+  .box__glitch {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--boxColor);
+    filter: drop-shadow(-2px 3px #67e3f3) drop-shadow(-1px -3px #02d8f3)
+      drop-shadow(2px 1px #02d8f3);
+  }
+  .boxHeader {
+    font-size: 16px;
+    background: var(--boxColor);
+    display: inline-block;
+    color: var(--p2);
+    padding: 2px 16px 1px 6px;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0% 100%);
+    transition: all 300ms ease-in-out;
+    vertical-align: bottom;
+    margin-bottom: -1px;
+    span {
+      padding: 0px 2px;
     }
   }
   hr {
@@ -66,11 +76,11 @@
     text-align: center;
     margin-top: 8px;
   }
-  .portfolio-image-thumb {
+  .portfolioImageThumb {
     padding: 0;
     margin: 0 auto;
     margin-bottom: 16px;
-    width: 200px;
+    width: 260px;
     min-height: 170px;
     display: block;
   }
@@ -81,7 +91,7 @@
     transition: all 300ms ease-in-out;
     color: #fff;
   }
-  .box-wrapper {
+  .boxWrapper {
     clip-path: polygon(
       0 0,
       100% 0,
@@ -121,7 +131,122 @@
       display: inline-block;
     }
   }
+  
+/* secret trick */
+@keyframes glitch-animation {
+  0% {
+    opacity: 1;
+    transform: translateZ(0);
+    clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+  }
+
+  2% {
+    clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+    transform: translate(-5px);
+  }
+
+  6% {
+    clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+    transform: translate(5px);
+  }
+
+  8% {
+    clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+    transform: translate(-5px);
+  }
+
+  9% {
+    clip-path: polygon(0 78%, 100% 78%, 100% 100%, 0 100%);
+    transform: translate(0);
+  }
+
+  10% {
+    clip-path: polygon(0 54%, 100% 54%, 100% 44%, 0 44%);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  13% {
+    clip-path: polygon(0 54%, 100% 54%, 100% 44%, 0 44%);
+    transform: translateZ(0);
+  }
+
+  13.1% {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  15% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 40%, 0 40%);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  20% {
+    clip-path: polygon(0 60%, 100% 60%, 100% 40%, 0 40%);
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  20.1% {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  25% {
+    clip-path: polygon(0 85%, 100% 85%, 100% 40%, 0 40%);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  30% {
+    clip-path: polygon(0 85%, 100% 85%, 100% 40%, 0 40%);
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  30.1% {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  }
+
+  35% {
+    clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+    transform: translate(-5px);
+  }
+
+  40% {
+    clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+    transform: translate(5px);
+  }
+
+  45% {
+    clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+    transform: translate(-5px);
+  }
+
+  50% {
+    clip-path: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+    transform: translate(0);
+  }
+
+  55% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 0, 0 0);
+    transform: translate3d(5px, 0, 0);
+  }
+
+  60% {
+    clip-path: polygon(0 10%, 100% 10%, 100% 0, 0 0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+
+  60.1% {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    opacity: 1;
+  }
+
+  to {
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    opacity: 1;
+  }
 }
+}
+
 /* 
 * Prevents issues when the parent creates a 
 * stacking context. (For example, using the transform
