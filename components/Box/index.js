@@ -22,7 +22,7 @@ const Box = ({ node, image, children, headline = "", empty = false }) => {
 
   const { id, title, tag, permalink, category, logo, fileName } = node;
   return (
-    <Link href={permalink}>
+    <Link  legacyBehavior href={permalink}>
       <a className={style.box}>
         <span className={style.box__glitch}></span>
         <div className={style.boxHeader}>
@@ -36,7 +36,7 @@ const Box = ({ node, image, children, headline = "", empty = false }) => {
           {logo && (
             <div className={style.portfolioImageThumb}>
               <Image
-                objectFit="contain"
+                // objectFit="contain"
                 src={"/images/portfolio/" + fileName + "/" + logo[0]}
                 width="250"
                 height="170"

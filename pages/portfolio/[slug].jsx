@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }) {
   const fileName = fs.readFileSync(
-    `Content/Portfolio/${slug}/${slug}.md`,
+    `Content/portfolio/${slug}/${slug}.md`,
     "utf-8"
   );
   const { data: data, content } = matter(fileName);
@@ -31,7 +31,7 @@ export async function getStaticProps({ params: { slug } }) {
   };
 }
 
-export default function PostPage({ data }) {
+export default function Portfolio({ data }) {
 
   return <Template data={data} />;
 }

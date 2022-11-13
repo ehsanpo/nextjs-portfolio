@@ -8,8 +8,6 @@ import Box from "../Box/EmptyBox";
 import NextImage from "next/future/image";
 
 const IndexPage = ({ data, content }) => {
-  // console.log(data);
-
   const portfolioBlockData = data;
   const permalink = "/images/portfolio/" + data.fileName + "/";
   const portfolioBlockBody = content;

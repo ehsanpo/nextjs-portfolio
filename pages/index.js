@@ -5,7 +5,6 @@ import SeO from "../components/seo";
 import Button from "../components/Button";
 import Stack from "../components/Stack";
 import Award from "../components/Award";
-import Parallax from "../components/ParallaxImage";
 import Hero from "../components/Hero";
 import PortfolioBlock from "../components/PortfolioBlock";
 import fs from "fs";
@@ -46,10 +45,7 @@ const IndexPage = ({ portfolioBlockData }) => {
           </InViewMonitor>
         </div>
       </section>
-      <Parallax filename="QX17.jpg" />
-
       <Award />
-      <Parallax filename="QX10.jpg" />
     </Layout>
   );
 };
@@ -65,7 +61,7 @@ export async function getStaticProps() {
       "utf-8"
     );
     const { data: frontmatter } = matter(readFile);
-
+    frontmatter.fileName = fileName;
     return {
       slug: frontmatter.permalink,
       data: frontmatter,
@@ -73,5 +69,4 @@ export async function getStaticProps() {
   });
   let sources = posts.filter((post) => post.data.onHome === true);
   return { props: { portfolioBlockData: sources } };
-  // Get all our posts
 }

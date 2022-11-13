@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Link from "next/link";
 
 const Button = ({
@@ -8,10 +8,12 @@ const Button = ({
   to = "/",
   onClick,
 }) => {
-  const buttonLable = Math.random()
-    .toString(36)
-    .replace(/[^a-z]+/g, "")
-    .substr(0, 2);
+  // const buttonLable = Math.random()
+  // .toString(36)
+  // .replace(/[^a-z]+/g, "")
+  // .substr(0, 2);
+
+  const buttonLable = "EPX1";
 
   if (type === "button") {
     return (

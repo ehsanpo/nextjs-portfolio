@@ -4,8 +4,11 @@ import Layout from "../components/layout";
 import SeO from "../components/seo";
 import Parallax from "../components/ParallaxImage";
 import PostBlock from "../components/PostBlock";
+import fs from "fs";
+import matter from "gray-matter";
 
 const Portfolio = ({ data }) => (
+
   <Layout>
     <SeO title="Developer Portfolio" />
     <Parallax filename="x2.jpg" />
@@ -38,31 +41,27 @@ const Portfolio = ({ data }) => (
         </div>
       </div>
     </section>
-    {/* <PostBlock data={data.allMarkdownRemark.edges} /> */}
+   <PostBlock data={data} /> 
   </Layout>
 );
 export default Portfolio;
 
-// export const query = graphql`
-// 	query AllPostBlock {
-// 		allMarkdownRemark(
-// 			filter: { frontmatter: { type: { eq: "post" } } }
-// 			sort: { order: DESC, fields: frontmatter___date }
-// 		) {
-// 			edges {
-// 				node {
-// 					id
-// 					__typename
-// 					frontmatter {
-// 						title
-// 						category
-// 						tag
-// 						permalink
-// 						id
-// 						type
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// `;
+export async function getStaticProps() {
+  const files = fs.readdirSync("Content/blog");
+  const posts = files.map((fileName) => {
+    const slug = fileName.replace(".md", "");
+    const readFile = fs.readFileSync(
+      `Content/blog/${fileName}/${fileName}.md`,
+      "utf-8"
+    );
+    const { data: frontmatter } = matter(readFile);
+    frontmatter.fileName = fileName;
+    return {
+      slug: frontmatter.permalink,
+      data: frontmatter,
+    };
+  });
+  const sortedpost =  posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
+  return { props: { data: sortedpost } };
+
+}

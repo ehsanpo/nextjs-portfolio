@@ -53,41 +53,7 @@ export async function getStaticProps() {
   });
 
   const sortedpost =  posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
-  console.log('date', sortedpost[0])
   return { props: { portfolioBlockData: sortedpost } };
-  // Get all our posts
+
 }
 
-// export const query = graphql`
-// 	query AllPortfolioBlock {
-// 		allMarkdownRemark(
-// 			filter: { frontmatter: { type: { eq: "portfolio" } } }
-// 			sort: { order: DESC, fields: frontmatter___port_date }
-// 		) {
-// 			edges {
-// 				node {
-// 					id
-// 					__typename
-// 					frontmatter {
-// 						title
-// 						category
-// 						tag
-// 						permalink
-// 						id
-// 						logo {
-// 							childImageSharp {
-// 								gatsbyImageData(
-// 									layout: CONSTRAINED
-// 									placeholder: BLURRED
-// 									formats: [AUTO, WEBP, AVIF]
-// 									width: 200
-// 								)
-// 							}
-// 						}
-// 						type
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// `;
