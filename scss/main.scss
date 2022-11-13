@@ -128,6 +128,7 @@ ol {
   }
   .portfolio-header {
     height: 64vh;
+    min-height: 550px;
     position: relative;
     &.no-header {
       display: none;
@@ -276,11 +277,24 @@ ol {
     top: 32px;
   }
 }
+.tags span {
+  padding: 2px 8px 2px 4px;
+  background: var(--p2);
+  margin: 5px 4px;
+  -webkit-clip-path: polygon(0 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%);
+  clip-path: polygon(0 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%);
+  color: #fff;
+  display: inline-block;
+}
+.tags {
+  font-size: 14px;
+  font-family: Tomorrow,sans-serif;
+}
 .gallery-wrapper {
   min-width: 75%;
-  .gatsby-image-wrapper {
+  .image-wrapper {
     margin-bottom: 32px;
-    border: 24px solid;
+    // border: 24px solid;
     border-radius: 2px;
     clip-path: polygon(
       -1px -1px,
@@ -306,6 +320,9 @@ ol {
       0px calc(100% - 60px),
       -1px calc(100% - 60px)
     );
+  }
+  img{
+    position: relative !important;
   }
 }
 

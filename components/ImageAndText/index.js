@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "./imageAndText.module.scss";
+import style from "./imageAndText.module.scss";
 
 const ImageAndText = ({ image, children, nopad, left }) => (
-  <section className="no-pad">
+  <section className={style.noPad}>
     <div className="wrapper">
-      <div className={` ImageAndText ${left ? "left" : ""}`}>
-        <div className="itb-image">{image}</div>
-        <div className="itb-text">
+      <div className={` ${style.ImageAndText} ${left ? style.left  : ""}`}>
+        <div className={style.itb_image}>{image}</div>
+        <div className={style.itb_text} >
           <div className="v-center">{children}</div>
         </div>
       </div>

@@ -2,11 +2,11 @@
 	flex-wrap: wrap;
 	display: block;
 	&.left {
-		.itb-image {
+		.itb_image {
 			order: 2;
 		}
 	}
-	.itb-image {
+	.itb_image {
 		min-width: 50%;
 		flex: 1;
 		box-sizing: border-box;
@@ -14,7 +14,7 @@
 		margin: 0;
 		margin-bottom: 32px;
 	}
-	.itb-text {
+	.itb_text {
 		box-sizing: border-box;
 	}
 	@media only screen and (max-width: 40em) {
@@ -26,17 +26,17 @@
 	@media only screen and (min-width: 40em) {
 		display: flex;
 		margin-bottom: -8px;
-		.itb-text {
+		.itb_text {
 			min-width: 50%;
 			flex: 1;
 			padding: 32px 64px;
 		}
-		.itb-image {
+		.itb_image {
 			margin-bottom: 0;
 		}
 	}
 }
-.no-pad {
+.noPad {
 	@media only screen and (min-width: 40em) {
 		padding: 0;
 		margin: 64px 0;

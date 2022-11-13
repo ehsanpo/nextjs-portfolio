@@ -69,16 +69,7 @@ export async function getStaticProps() {
     const slug = fileName.replace('.md', '');
     const readFile = fs.readFileSync(`Content/Portfolio/${fileName}/${fileName}.md`, 'utf-8');
     const { data: frontmatter } = matter(readFile);
-    console.log(frontmatter.permalink);
-    // if(typeof frontmatter.logo !== "undefined" && frontmatter.type=== "portfolio" ){
-    
 
-    // }
-    //const image = require('../Content' + frontmatter.permalink + '/' + frontmatter.logo[0])
-    // else{
-    //  const  image= ""
-    // }
-    // console.log('ep',image)
     return {
       slug: frontmatter.permalink,
       data:frontmatter,
@@ -90,31 +81,3 @@ export async function getStaticProps() {
   // Get all our posts
 }
 
-// export const query = graphql`
-//   query PortfolioBlock {
-//     allMarkdownRemark(
-//       sort: { fields: [frontmatter___port_date], order: DESC }
-//       filter: { frontmatter: { onHome: { eq: true } } }
-//     ) {
-//       edges {
-//         node {
-//           id
-//           __typename
-//           frontmatter {
-//             title
-//             category
-//             tag
-//             permalink
-//             id
-//             logo {
-//               childImageSharp {
-//                 gatsbyImageData(width: 200)
-//               }
-//             }
-//           }
-//           excerpt(pruneLength: 280)
-//         }
-//       }
-//     }
-//   }
-// `;

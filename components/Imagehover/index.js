@@ -1,7 +1,11 @@
 import React, { useRef, useEffect } from "react";
 import hoverEffect from "hover-effect";
-import portfolioImage from "../../public/images/ep-3-3.jpg";
+// import portfolioImage from "../../public/images/ep-3-3.jpg";
+// import portfolioImage2 from "../../public/images/ep-3-2.jpg";
+import portfolioImage from "../../public/ehsan/111.jpg";
 import portfolioImage2 from "../../public/images/ep-3-2.jpg";
+
+
 import flip1 from "../../public/images/111.jpg";
 import flip2 from "../../public/images/112.jpg";
 import flip3 from "../../public/images/113.jpg";
@@ -33,8 +37,8 @@ const LocalImage = () => {
     var myAnimation = new hoverEffect({
       parent: container.current,
       intensity: 0.3,
-      image1: "../../images/ep-3-3.jpg",
-      image2: "../../images/ep-3-3.jpg",
+      image1: "../../ehsan/112.jpg",
+      image2: "../../ehsan/116.jpg",
       displacementImage: randomElement,
     });
   }, [container, randomElement]);
@@ -44,8 +48,8 @@ const LocalImage = () => {
       id="imgContainer"
       ref={container}
       style={{
-        width: 300,
-        height: 437,
+        width: 340,
+        height: 560,
         marginTop: 80,
       }}
     />

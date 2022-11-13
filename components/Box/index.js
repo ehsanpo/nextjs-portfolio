@@ -8,9 +8,19 @@ function onlyCapitalLetters(str) {
   return (str.match(/[A-Z]/g) || []).join("");
 }
 
-const Box = ({ node, image }) => {
-  const { id, title, tag, permalink, category, logo } = node;
+const Box = ({ node, image, children, headline = "", empty = false }) => {
+  if (empty) {
+    return (
+      <div lassName={style.box}>
+            <span className={style.box__glitch}></span>
+            <div className={style.boxHeader}>{headline}</div>
+        <hr />
+        <div className={style.boxWrapper}>{children}</div>
+      </div>
+    );
+  }
 
+  const { id, title, tag, permalink, category, logo } = node;
   return (
     <Link href={permalink}>
       <a className={style.box}>
