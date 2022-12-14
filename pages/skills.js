@@ -4,10 +4,12 @@ import SeO from "../components/seo";
 import "chart.js/auto";
 import { Radar } from "react-chartjs-2";
 import chart_data from "../data/skills-data";
+import cert_data from "../data/cert-data";
 import Button from "../components/Button";
 import Stack from "../components/Stack";
 import Image from "next/image";
 import ImageAndText from "../components/ImageAndText";
+import InViewMonitor from "react-inview-monitor";
 
 let list;
 const Skills = () => {
@@ -142,7 +144,16 @@ const Skills = () => {
           </div>
         </div>
       </section>
+
       <section className="no-bg">
+        <InViewMonitor
+          intoViewMargin="6%"
+          classNameNotInView="vis-hidden"
+          classNameInView="animated titleIn"
+          toggleClassNameOnInView
+        >
+          <h2 className="title red">Developer Stacks</h2>
+        </InViewMonitor>
         <div className="wrapper">
           <Stack type="LNMP" />
           <Stack type="nodejs" />
@@ -150,28 +161,28 @@ const Skills = () => {
           <Stack type="wordpress" />
         </div>
       </section>
-      <div className="wrapper">
-        <img
-          width="1400"
-          height="700"
-          src="https://cr-skills-chart-widget.azurewebsites.net/api/api?username=ehsanpo&skills=JavaScript,HTML,CSS,JSON,Less,NodeJS,PHP,Python,ReactJS,Ruby,SCSS,SQL,Shell,TypeScript&bg=transparent"
-        />
-      </div>
-      <ImageAndText
-        left
-        nopad
-        image={
-          <Image
-            src="/images/cloudpractitioner.jpg"
-            alt="AWS Cloud Certification"
-            width={700}
-            height={390}
-          />
-        }
-      >
-        <h2>AWS Cloud Certification</h2>
-        <p>Officially certified as an AWS Solution Architect 2017</p>
-      </ImageAndText>
+
+      <section className="bg-color-1 cert-wrap">
+        <InViewMonitor
+          intoViewMargin="6%"
+          classNameNotInView="vis-hidden"
+          classNameInView="animated titleIn"
+          toggleClassNameOnInView
+        >
+          <h2 className="title red">Certifications</h2>
+        </InViewMonitor>
+        <div className="wrapper">
+          {cert_data.map((cert) => {
+            return (
+              <div>
+                <img src={`/images/cert/${cert.img}`}></img>
+                <h4>{cert.name}</h4>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
       <ImageAndText
         image={
           <Image
@@ -222,6 +233,100 @@ const Skills = () => {
           into the hands of users, safely and quickly in a sustainable way.
         </p>
       </ImageAndText>
+      <section className="bg-color-2">
+        <div className="wrapper">
+          <img
+            width="1400"
+            height="700"
+            src="https://cr-skills-chart-widget.azurewebsites.net/api/api?username=ehsanpo&skills=JavaScript,HTML,CSS,JSON,Less,NodeJS,PHP,Python,ReactJS,Ruby,SCSS,SQL,Shell,TypeScript&bg=transparent"
+          />
+        </div>
+      </section>
+
+      <section className="links-block">
+        <InViewMonitor
+          intoViewMargin="6%"
+          classNameNotInView="vis-hidden"
+          classNameInView="animated titleIn"
+          toggleClassNameOnInView
+        >
+          <h2 className="title red">Stats</h2>
+        </InViewMonitor>
+        <div className="wrapper">
+          <div className="link">
+            <div className="content">
+              <h3
+                data-aos="fade-up"
+                data-aos-delay="200"
+                className="aos-init aos-animate"
+              >
+                Total commits this year
+              </h3>
+              <div
+                data-aos="fade-up"
+                data-aos-delay="200"
+                className="aos-init aos-animate"
+              >
+                <p>1100</p>
+              </div>
+            </div>
+          </div>
+          <div className="link">
+            <div className="content">
+              <h3
+                data-aos="fade-up"
+                data-aos-delay="300"
+                className="aos-init aos-animate"
+              >
+                Daytime
+              </h3>
+              <div
+                data-aos="fade-up"
+                data-aos-delay="300"
+                className="aos-init aos-animate"
+              >
+                <p>I’m most productive during daytime</p>
+              </div>
+            </div>
+          </div>
+          <div className="link">
+            <div className="content">
+              <h3
+                data-aos="fade-up"
+                data-aos-delay="400"
+                className="aos-init aos-animate"
+              >
+                Tuesdays
+              </h3>
+              <div
+                data-aos="fade-up"
+                data-aos-delay="400"
+                className="aos-init aos-animate"
+              >
+                <p>I’m most productive on Tuesdays</p>
+              </div>
+            </div>
+          </div>
+          <div className="link">
+            <div className="content">
+              <h3
+                data-aos="fade-up"
+                data-aos-delay="500"
+                className="aos-init aos-animate"
+              >
+                snake_case
+              </h3>
+              <div
+                data-aos="fade-up"
+                data-aos-delay="500"
+                className="aos-init aos-animate"
+              >
+                <p>I prefer snake_case for naming variables</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 };

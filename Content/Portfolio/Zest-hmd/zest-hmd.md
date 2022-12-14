@@ -16,7 +16,7 @@ tag:
   - Javascript
   - PHP
 case_link_url:
-  - "https://zesteducation.se/"
+  - "https://bättretillvaro.se/"
 client:
   - "Zest Bemanning"
 tagline:
@@ -31,3 +31,5 @@ bilder:
 port_date:
   - "2019"
 ---
+
+After building a site for Zest Care recruiting agency, They needed a simple quiz that they will push to social media to ask nurses how they feel at work to make some lead by offering a simple "Send us your CV". The quiz in build with react with a PHP, Mysql backend to save and view the incoming data.

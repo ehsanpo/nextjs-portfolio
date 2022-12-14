@@ -8,7 +8,6 @@
 @import "elements/footer.scss";
 @import "layout/layout.scss";
 
-
 :root {
   --boxColor: var(--p1);
   --boxHover: var(--lighblue);
@@ -20,7 +19,6 @@
 img {
   max-width: 100%;
 }
-
 
 section {
   padding: 128px 0;
@@ -281,14 +279,26 @@ ol {
   padding: 2px 8px 2px 4px;
   background: var(--p2);
   margin: 5px 4px;
-  -webkit-clip-path: polygon(0 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%);
-  clip-path: polygon(0 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%);
+  -webkit-clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    0 100%
+  );
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    0 100%
+  );
   color: #fff;
   display: inline-block;
 }
 .tags {
   font-size: 14px;
-  font-family: Tomorrow,sans-serif;
+  font-family: Tomorrow, sans-serif;
 }
 .gallery-wrapper {
   min-width: 75%;
@@ -321,7 +331,7 @@ ol {
       -1px calc(100% - 60px)
     );
   }
-  img{
+  img {
     position: relative !important;
   }
 }
@@ -460,4 +470,15 @@ about
     calc(100% - 16px) 100%,
     0px 100%
   );
+}
+
+.blog-post-content {
+  white-space: pre-line;
+}
+
+.cert-wrap {
+  .wrapper div {
+    min-width: 20%;
+    text-align: center;
+  }
 }

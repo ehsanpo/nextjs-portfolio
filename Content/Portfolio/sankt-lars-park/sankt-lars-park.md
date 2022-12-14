@@ -1,32 +1,31 @@
 ---
-title: 'Sankt Lars Park'
-date: '2019-03-28T12:54:27+00:00'
+title: "Sankt Lars Park"
+date: "2019-03-28T12:54:27+00:00"
 status: publish
-permalink: /portfolio/slp
+permalink: /portfolio/sankt-lars-park
 author: Ehsan
 type: portfolio
 id: 116
 agancy: Guts & Glory
 category:
-    - Backend
-    - Front-end
+  - Backend
+  - Front-end
 tag:
-    - Wordpress
-    - HTML
-    - Javascript
-    - PHP
+  - Wordpress
+  - HTML
+  - Javascript
+  - PHP
 case_link_url:
 client:
-    - 'Sankt Lars Park'
+  - "Sankt Lars Park"
 tagline:
 background_image:
-    - 'bg.jpg'
+  - "bg.jpg"
 logo:
-    - 'logo.png'
+  - "logo.png"
 video:
 bilder:
-    - '1.jpg'
+  - "1.jpg"
 port_date:
-    - '2019'
-
+  - "2019"
 ---

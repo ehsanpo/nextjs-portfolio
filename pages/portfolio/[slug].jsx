@@ -20,8 +20,9 @@ export async function getStaticProps({ params: { slug } }) {
     `Content/portfolio/${slug}/${slug}.md`,
     "utf-8"
   );
-  const { data: data, content } = matter(fileName);
 
+  const ehsan = matter(fileName);
+  const { data: data, content } = matter(fileName);
 
   return {
     props: {
@@ -31,7 +32,6 @@ export async function getStaticProps({ params: { slug } }) {
   };
 }
 
-export default function Portfolio({ data }) {
-
-  return <Template data={data} />;
+export default function Portfolio({ data, content }) {
+  return <Template data={data} content={content} />;
 }

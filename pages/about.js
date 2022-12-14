@@ -216,92 +216,8 @@ const NotFoundPage = () => {
           </div>
         </div>
       </section>
-      <section className="links-block">
-        <InViewMonitor
-          intoViewMargin="6%"
-          classNameNotInView="vis-hidden"
-          classNameInView="animated titleIn"
-          toggleClassNameOnInView
-        >
-          <h2 className="title red">Stats</h2>
-        </InViewMonitor>
-        <div className="wrapper">
-          <div className="link">
-            <div className="content">
-              <h3
-                data-aos="fade-up"
-                data-aos-delay="200"
-                className="aos-init aos-animate"
-              >
-                Lines of code
-              </h3>
-              <div
-                data-aos="fade-up"
-                data-aos-delay="200"
-                className="aos-init aos-animate"
-              >
-                <p>23750691</p>
-              </div>
-            </div>
-          </div>
-          <div className="link">
-            <div className="content">
-              <h3
-                data-aos="fade-up"
-                data-aos-delay="300"
-                className="aos-init aos-animate"
-              >
-                Daytime
-              </h3>
-              <div
-                data-aos="fade-up"
-                data-aos-delay="300"
-                className="aos-init aos-animate"
-              >
-                <p>I’m most productive during daytime</p>
-              </div>
-            </div>
-          </div>
-          <div className="link">
-            <div className="content">
-              <h3
-                data-aos="fade-up"
-                data-aos-delay="400"
-                className="aos-init aos-animate"
-              >
-                Tuesdays
-              </h3>
-              <div
-                data-aos="fade-up"
-                data-aos-delay="400"
-                className="aos-init aos-animate"
-              >
-                <p>I’m most productive on Tuesdays</p>
-              </div>
-            </div>
-          </div>
-          <div className="link">
-            <div className="content">
-              <h3
-                data-aos="fade-up"
-                data-aos-delay="500"
-                className="aos-init aos-animate"
-              >
-                snake_case
-              </h3>
-              <div
-                data-aos="fade-up"
-                data-aos-delay="500"
-                className="aos-init aos-animate"
-              >
-                <p>I prefer snake_case for naming variables</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section className="image-text-block-boxed no-bg add_padding">
+      {/* <section className="image-text-block-boxed no-bg add_padding">
         <InViewMonitor
           intoViewMargin="6%"
           classNameNotInView="vis-hidden"
@@ -336,7 +252,7 @@ const NotFoundPage = () => {
             />
           </div>
         </div>
-      </section>
+      </section> */}
       <Award />
     </Layout>
   );

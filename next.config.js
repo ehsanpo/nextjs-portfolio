@@ -10,6 +10,10 @@ module.exports = {
     return {
       "/": { page: "/" },
       "/about": { page: "/about" },
+      "/music": { page: "/music" },
+      "/gallery": { page: "/gallery" },
+      "/skills": { page: "/skills" },
+      "/portfolio": { page: "/portfolio" },
     };
   },
 };

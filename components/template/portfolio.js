@@ -9,7 +9,7 @@ import NextImage from "next/image";
 
 const IndexPage = ({ data, content }) => {
   const portfolioBlockData = data;
-  const permalink = "/images/portfolio/" + data.fileName + "/";
+  const permalink = "/images/" + data.permalink + "/";
   const portfolioBlockBody = content;
   const [headerClose, setHeaderClose] = useState("");
 
@@ -164,15 +164,10 @@ const IndexPage = ({ data, content }) => {
                       </>
                     }
                   >
-                    <div
-                      className="blog-post-content"
-                      dangerouslySetInnerHTML={{
-                        __html: portfolioBlockBody,
-                      }}
-                    />
                     <div>{portfolioBlockBody}</div>
                   </Box>
                 )}
+
                 <Box
                   empty
                   max
