@@ -3,17 +3,22 @@ import style from "./Hero.module.scss";
 import Button from "../Button";
 import logo from "./logo.svg";
 const Hero = () => {
-  const ImageArray =[
-    "/images/3/5.png",
-    "/images/3/11.png",
-    "/images/3/14.png",
-    "/images/3/4.png",
-  ]
-  const randomElement =
-  ImageArray[Math.floor(Math.random() * ImageArray.length)];
+  // const ImageArray = [
+  //   "/images/3/5.png",
+  //   "/images/3/11.png",
+  //   "/images/3/14.png",
+  //   "/images/3/4.png",
+  // ];
+  // const randomElement =
+  //   ImageArray[Math.floor(Math.random() * ImageArray.length)];
   return (
     <section className={style.hero}>
-      <img style={{objectFit: "cover"}} alt="EP Logo" className={style.bg} src={randomElement} />
+      {/* <img
+        style={{ objectFit: "cover" }}
+        alt="EP Logo"
+        className={style.bg}
+        src={randomElement}
+      /> */}
       <div className={style.heroWrapper + " wrapper"}>
         <div className="v-center--f">
           <img alt="EP Logo" className={style.logo} src="logo.svg" />

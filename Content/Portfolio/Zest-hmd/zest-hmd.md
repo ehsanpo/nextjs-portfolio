@@ -1,34 +1,33 @@
 ---
-title: 'Zest'
-date: '2019-03-28T12:54:27+00:00'
+title: "Zest - Hur mår du?"
+date: "2019-03-28T12:54:27+00:00"
 status: publish
-permalink: /portfolio/zest
+permalink: /portfolio/zest-hmd
 author: Ehsan
 type: portfolio
 id: 312
 agancy: Guts & Glory
 category:
-    - Backend
-    - Front-end
+  - Backend
+  - Front-end
 tag:
-    - Wordpress
-    - HTML
-    - Javascript
-    - PHP
+  - Wordpress
+  - HTML
+  - Javascript
+  - PHP
 case_link_url:
-    - 'https://zesteducation.se/'
+  - "https://zesteducation.se/"
 client:
-    - 'Zest Bemanning'
+  - "Zest Bemanning"
 tagline:
+background_image:
+  - "fb2.png"
 logo:
-    - '1-3.png'
+  - "1-3.png"
 video:
 bilder:
-    - '1-1.jpg'
-    - 'fb2.jpg'
-    - '3.jpg'
-    - '33.jpg'
+  - "1-1.png"
+  - "fb2.png"
 port_date:
-    - '2019'
-
+  - "2019"
 ---

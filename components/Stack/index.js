@@ -30,7 +30,7 @@ const Stack = ({ type = "nodejs" }) => {
     <div className={style.stackholder}>
       <img alt={toRender.headline} src={toRender.icon} />
       <h3>{toRender.headline}</h3>
-      <div  className={style.stacks} >
+      <div className={style.stacks}>
         <ul>
           {toRender.tools.map((t) => (
             <li key={t}>{t}</li>

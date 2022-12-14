@@ -1,49 +1,49 @@
 .ImageAndText {
-	flex-wrap: wrap;
-	display: block;
-	&.left {
-		.itb_image {
-			order: 2;
-		}
-	}
-	.itb_image {
-		min-width: 50%;
-		flex: 1;
-		box-sizing: border-box;
-		min-height: 0;
-		margin: 0;
-		margin-bottom: 32px;
-	}
-	.itb_text {
-		box-sizing: border-box;
-	}
-	@media only screen and (max-width: 40em) {
-		.v-center {
-			position: static;
-			transform: none;
-		}
-	}
-	@media only screen and (min-width: 40em) {
-		display: flex;
-		margin-bottom: -8px;
-		.itb_text {
-			min-width: 50%;
-			flex: 1;
-			padding: 32px 64px;
-		}
-		.itb_image {
-			margin-bottom: 0;
-		}
-	}
+  flex-wrap: wrap;
+  display: block;
+  &.left {
+    .itb_image {
+      order: 2;
+    }
+  }
+  .itb_image {
+    min-width: 50%;
+    flex: 1;
+    box-sizing: border-box;
+    min-height: 0;
+    margin: 0;
+    margin-bottom: 32px;
+  }
+  .itb_text {
+    box-sizing: border-box;
+  }
+  @media only screen and (max-width: 40em) {
+    .v-center {
+      position: static;
+      transform: none;
+    }
+  }
+  @media only screen and (min-width: 40em) {
+    display: flex;
+    margin-bottom: -8px;
+    .itb_text {
+      min-width: 50%;
+      flex: 1;
+      padding: 32px 64px;
+    }
+    .itb_image {
+      margin-bottom: 0;
+    }
+  }
 }
 .noPad {
-	@media only screen and (min-width: 40em) {
-		padding: 0;
-		margin: 64px 0;
-	}
+  @media only screen and (min-width: 40em) {
+    padding: 0;
+    margin: 64px 0;
+  }
 }
 .no-marg {
-	@media only screen and (min-width: 40em) {
-		margin: 0;
-	}
+  @media only screen and (min-width: 40em) {
+    margin: 0;
+  }
 }

@@ -12,8 +12,8 @@ const Box = ({ node, image, children, headline = "", empty = false }) => {
   if (empty) {
     return (
       <div lassName={style.box}>
-            <span className={style.box__glitch}></span>
-            <div className={style.boxHeader}>{headline}</div>
+        <span className={style.box__glitch}></span>
+        <div className={style.boxHeader}>{headline}</div>
         <hr />
         <div className={style.boxWrapper}>{children}</div>
       </div>
@@ -22,7 +22,7 @@ const Box = ({ node, image, children, headline = "", empty = false }) => {
 
   const { id, title, tag, permalink, category, logo, fileName } = node;
   return (
-    <Link  legacyBehavior href={permalink}>
+    <Link legacyBehavior href={permalink}>
       <a className={style.box}>
         <span className={style.box__glitch}></span>
         <div className={style.boxHeader}>

@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const EmptyBox = ({ children, headline = "", max = false }) => {
   return (
-     <div className={` ${style.box} ${max ? style.box__max  : ""}`}>
+    <div className={` ${style.box} ${max ? style.box__max : ""}`}>
       <span className={style.box__glitch}></span>
       <div className={style.boxHeader}>{headline}</div>
       <hr />

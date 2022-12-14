@@ -5,7 +5,7 @@ import { Link } from "next/link";
 import Button from "../Button";
 import Image from "next/image";
 import Box from "../Box/EmptyBox";
-import NextImage from "next/future/image";
+import NextImage from "next/image";
 
 const IndexPage = ({ data, content }) => {
   const portfolioBlockData = data;

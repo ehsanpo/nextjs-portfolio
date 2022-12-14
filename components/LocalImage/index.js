@@ -6,12 +6,10 @@ const LocalImage = ({
   style = {},
   className = "",
   caption = null,
-  width ="100%",
-  height="auto",
+  width = "100%",
+  height = "auto",
   background = false,
   children,
-}) => (
-  <div></div>
-);
+}) => <div></div>;
 
 export default LocalImage;

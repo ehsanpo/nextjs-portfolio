@@ -2,9 +2,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "copyimages": "node ./bin/copy-images.mjs",
+    "deploy": "npm run build && cp ./CNAME out/ && gh-pages -d out",
     "prebuild": "npm run copyimages"
   },
   "dependencies": {
@@ -26,6 +27,7 @@
     "react-spotify-player": "^1.0.4"
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "sass": "^1.54.9"
   }
 }

@@ -43,27 +43,23 @@ const Header = ({ siteTitle }) => {
             </li>
             <li>
               <Link legacyBehavior className="btn--link" href="/portfolio">
-              <a className="btn--link">Portfolio</a>
+                <a className="btn--link">Portfolio</a>
               </Link>
             </li>
             <li>
               <Link legacyBehavior href="/music">
-              <a className="btn--link">Music</a>
+                <a className="btn--link">Music</a>
+              </Link>
+            </li>
+
+            <li>
+              <Link legacyBehavior href="/skills">
+                <a className="btn--link">Skills</a>
               </Link>
             </li>
             <li>
-              <Link legacyBehavior  href="/blog">
-              <a className="btn--link">Writing</a>
-              </Link>
-            </li>
-            <li>
-              <Link legacyBehavior  href="/skills">
-              <a className="btn--link">Skills</a>
-              </Link>
-            </li>
-            <li>
-              <Link  legacyBehavior href="/about">
-              <a className="btn--link">About</a>
+              <Link legacyBehavior href="/about">
+                <a className="btn--link">About</a>
               </Link>
             </li>
           </ol>
