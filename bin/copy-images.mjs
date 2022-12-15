@@ -1,10 +1,10 @@
-import fs from 'fs';
-import path from 'path';
-import fsExtra from 'fs-extra';
+import fs from "fs";
+import path from "path";
+import fsExtra from "fs-extra";
 
 const fsPromises = fs.promises;
-const targetDir = './public/images/portfolio';
-const postsDir = './Content/portfolio';
+const targetDir = "./public/images/portfolio";
+const postsDir = "./Content/portfolio";
 
 async function copyImagesToPublic(images, slug) {
   for (const image of images) {
@@ -20,14 +20,20 @@ async function createPostImageFoldersForCopy() {
   const postSlugs = await fsPromises.readdir(postsDir);
 
   for (const slug of postSlugs) {
-    const allowedImageFileExtensions = ['.png', '.jpg', '.jpeg', '.gif'];
+    const allowedImageFileExtensions = [
+      ".png",
+      ".jpg",
+      ".jpeg",
+      ".gif",
+      ".webp",
+    ];
 
     // Read all files inside current post folder
     const postDirFiles = await fsPromises.readdir(`${postsDir}/${slug}`);
 
     // Filter out files with allowed file extension (images)
-    const images = postDirFiles.filter(file =>
-      allowedImageFileExtensions.includes(path.extname(file)),
+    const images = postDirFiles.filter((file) =>
+      allowedImageFileExtensions.includes(path.extname(file))
     );
 
     if (images.length) {
