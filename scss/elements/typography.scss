@@ -11,14 +11,6 @@
   font-weight: 400;
   font-display: swap;
 }
-@font-face {
-  font-family: "hudson";
-  src: url("/fonts/HudsonNY.woff2") format("woff2"),
-    url("/fonts/HudsonNY.woff") format("woff");
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-}
 
 $headlineFont: "Rajdhani";
 $bodyFont: "Tomorrow";
