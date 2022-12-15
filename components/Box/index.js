@@ -36,10 +36,11 @@ const Box = ({ node, image, children, headline = "", empty = false }) => {
           {logo && (
             <div className={style.portfolioImageThumb}>
               <Image
-                // objectFit="contain"
                 src={"/images/portfolio/" + fileName + "/" + logo[0]}
-                width="250"
-                height="170"
+                width={250}
+                height={170}
+                loading="lazy"
+                alt={title}
               />
             </div>
           )}
