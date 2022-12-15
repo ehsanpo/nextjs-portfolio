@@ -36,19 +36,10 @@ const Footer = () => (
         <div className="col soc-media">
           <div className="move-top"></div>
           <div className="social">
-            <a href="https://www.facebook.com/ehsan.pourhadi.1">
-              <svg
-                width="24"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-              >
-                <path
-                  d="M200.7 512V283H124v-91h76.7v-71.7C200.7 42.4 248.3 0 317.8 0c33.3 0 61.9 2.5 70.2 3.6V85h-48.2c-37.8 0-45.1 18-45.1 44.3V192H380l-11.7 91h-73.6v229"
-                  fill="#fff"
-                ></path>
-              </svg>
-            </a>
-            <a href="https://www.instagram.com/ehsaanpo/">
+            <a
+              href="https://www.instagram.com/ehsaanpo/"
+              aria-label="Instagram"
+            >
               <svg
                 width="24"
                 enableBackground="new 0 0 512 512"
@@ -61,7 +52,7 @@ const Footer = () => (
                 ></path>
               </svg>
             </a>
-            <a href="https://soundcloud.com/eprumental">
+            <a href="https://soundcloud.com/eprumental" aria-label="Soundcloud">
               <svg
                 width="24"
                 enableBackground="new 0 0 512 288"
@@ -90,7 +81,7 @@ const Footer = () => (
                 ></path>
               </svg>
             </a>
-            <a href="https://dribbble.com/epo">
+            <a href="https://dribbble.com/epo" aria-label="dribbble">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -103,7 +94,7 @@ const Footer = () => (
                 ></path>
               </svg>
             </a>
-            <a href="https://github.com/ehsanpo">
+            <a href="https://github.com/ehsanpo" aria-label="Github">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -116,7 +107,10 @@ const Footer = () => (
                 ></path>
               </svg>
             </a>
-            <a href="https://www.linkedin.com/in/ehsanp/">
+            <a
+              href="https://www.linkedin.com/in/ehsanp/"
+              aria-label="Linkedin channel"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -129,7 +123,7 @@ const Footer = () => (
                 ></path>
               </svg>
             </a>
-            <a href="https://twitter.com/ehsanpo">
+            <a href="https://twitter.com/ehsanpo" aria-label="Twitter">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -142,7 +136,10 @@ const Footer = () => (
                 ></path>
               </svg>
             </a>
-            <a href="https://www.youtube.com/user/ehsanpo/l">
+            <a
+              href="https://www.youtube.com/user/ehsanpo/"
+              aria-label="Youtube channel"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -159,7 +156,9 @@ const Footer = () => (
         </div>
       </div>
     </footer>
-    <div className="copyr">© Ehsan Pourhadi - Digital Developer</div>
+    <div role="complementary" className="copyr">
+      © Ehsan Pourhadi - Digital Developer
+    </div>
   </>
 );
 export default Footer;
