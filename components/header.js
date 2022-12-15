@@ -12,7 +12,7 @@ const Header = ({ siteTitle }) => {
     >
       <button
         className="button__navigation icon-only"
-        aria-label="Menu"
+        aria-label="Toggle menu"
         aria-controls="navigation"
         onClick={(e) => {
           setHeaderButton((current) => !current);

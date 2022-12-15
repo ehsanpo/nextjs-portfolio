@@ -21,7 +21,13 @@ const Hero = () => {
       /> */}
       <div className={style.heroWrapper + " wrapper"}>
         <div className="v-center--f">
-          <img alt="EP Logo" className={style.logo} src="logo.svg" />
+          <img
+            width={90}
+            height={86}
+            alt="EP Logo"
+            className={style.logo}
+            src="logo.svg"
+          />
           <h1 className="display">Ehsan Pourhadi</h1>
           <h2>Software Developer / Music Producer</h2>
           <div className={style.intro}>
