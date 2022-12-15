@@ -3,7 +3,8 @@ import Layout from "../components/layout";
 import SeO from "../components/seo";
 import "chart.js/auto";
 import { Radar } from "react-chartjs-2";
-import chart_data from "../data/skills-data";
+import chart_data_overall from "../data/skills-data";
+import stacks_data from "../data/stacks-data";
 import cert_data from "../data/cert-data";
 import Button from "../components/Button";
 import Stack from "../components/Stack";
@@ -11,108 +12,109 @@ import Image from "next/image";
 import ImageAndText from "../components/ImageAndText";
 import InViewMonitor from "react-inview-monitor";
 
-let list;
+const color_pattern = {
+  Overall: "rgba(105, 248, 255, 0.8)",
+  "Front-end": "rgba(245, 151, 64, 0.8)",
+  Backend: "rgba(139, 204, 59, 0.8)",
+  Database: "rgba(252, 238, 9, 0.8)",
+  Design: "rgba(255, 255, 255, 0.8)",
+  Cloud: "rgba(0, 64, 176, 0.8)",
+  DevOps: "rgba(0, 0, 0, 0.8)",
+};
+const bgcolor = "rgba(254, 48, 72, 0.8)";
+
+const chart_data_maker = (chart_data) => {
+  let return_array = [];
+  let slug;
+  let skill;
+
+  for (var i = 0; i < chart_data.length; i++) {
+    skill = chart_data[i];
+    slug = skill.slug;
+    return_array[slug] = {
+      labels: skill.labels,
+      datasets: [
+        {
+          label: skill.slug,
+          data: skill.data,
+          pointBackgroundColor: "#fef900",
+          pointHoverRadius: 5,
+          borderWidth: 1,
+          fill: true,
+          scaleStartValue: 0,
+          borderColor: bgcolor,
+        },
+      ],
+    };
+  }
+  return return_array;
+};
+
 const Skills = () => {
-  const bgcolor = "rgba(254, 48, 72, 0.8)";
+  const chart_data = [...chart_data_overall, ...stacks_data];
 
-  const chart_data_maker = () => {
-    let return_array = [];
-    let slug;
-    let skill;
-
-    for (var i = 0; i < chart_data.length; i++) {
-      skill = chart_data[i];
-      slug = skill.slug;
-      // debugger;
-      return_array[slug] = {
-        labels: skill.labels,
-        datasets: [
-          {
-            label: skill.slug,
-            data: skill.data,
-            pointBackgroundColor: "#fef900",
-            pointHoverRadius: 5,
-            borderWidth: 1,
-            fill: true,
-            scaleStartValue: 0,
-            // backgroundColor: bgcolor,
-            borderColor: bgcolor,
-          },
-        ],
-      };
-    }
-    return return_array;
-  };
-
-  const return_array = chart_data_maker();
-
+  const return_array = chart_data_maker(chart_data);
   const [skdata, setSkdata] = useState(return_array["Overall"]);
+  const [current_button, setCurrentButton] = useState("Overall");
 
-  const options = {
-    responsive: true,
-    fontSize: 40,
-    backgroundColor: bgcolor,
-    // backgroundColor:"#fff",
-    pointBorderColor: "#fff",
-    scale: {
-      ticks: {
-        showLabelBackdrop: true,
-        //backdropColor: "#fef900",
-        fontColor: "#ffffff",
-        //backgroundColor: "#fef900",
-        min: 0,
-        max: 10,
-        stepSize: 2,
-      },
-    },
-    scales: {
-      r: {
-        // title: {
-        // 	text: "red",
-        // },
-        beginAtZero: true,
-        grid: {
-          color: "##41bf50",
+  const options = (current_lable = "Overall") => {
+    return {
+      responsive: true,
+      fontSize: 40,
+      backgroundColor: color_pattern[current_lable],
+      opacity: 0.5,
+      pointBorderColor: "#fff",
+      scale: {
+        ticks: {
+          showLabelBackdrop: true,
+          fontColor: "#ffffff",
+          min: 0,
+          max: 10,
+          stepSize: 2,
         },
-        pointLabels: {
-          color: "#fff",
-          font: {
-            size: 16,
-            family: "Tomorrow, sans-serif",
+      },
+      scales: {
+        r: {
+          beginAtZero: true,
+          grid: {
+            color: "#fff",
+          },
+          pointLabels: {
+            color: "#fff",
+            font: {
+              size: 16,
+              family: "Tomorrow, sans-serif",
+            },
           },
         },
       },
-    },
-    pointLabelFontColor: "rgba(255,255,255,1)",
+      pointLabelFontColor: "rgba(255,255,255,1)",
 
-    legend: {
-      labels: {
-        color: "#fff",
-      },
-    },
-
-    plugins: {
       legend: {
         labels: {
-          // This more specific font property overrides the global property
-          color: "#fef900",
-          font: {
-            size: 18,
-            family: "Tomorrow, sans-serif",
+          color: "#fff",
+        },
+      },
+
+      plugins: {
+        legend: {
+          labels: {
+            color: "#fef900",
+            font: {
+              size: 18,
+              family: "Tomorrow, sans-serif",
+            },
           },
         },
       },
-    },
+    };
   };
-  list =
-    typeof document !== `undefined`
-      ? document.getElementsByTagName("button")
-      : [];
-  const handleClick = (chart_op, e) => {
-    for (var i = 0; i < list.length; i++) {
-      list[i].classList.remove("active", "Overall");
-    }
-    e.target.classList.add("active");
+  const [radarOptions, setRadarOptions] = useState(options());
+
+  const handleClick = (chart_op, index, e) => {
+    const current_lable = return_array[chart_op].datasets[0].label;
+    setRadarOptions(options(current_lable));
+    setCurrentButton(index);
     setSkdata(return_array[chart_op]);
   };
 
@@ -125,22 +127,26 @@ const Skills = () => {
         </div>
       </div>
       <section className="bg-color-3">
-        <div className="wrapper-m">
+        <div className="wrapper">
           <div className="radar-right">
-            {chart_data.map((skill) => (
+            {chart_data.map((skill, index) => (
               <Button
-                className={`${skill.slug} `}
+                className={`${skill.slug} ${
+                  current_button == index ? "active" : ""
+                }`}
                 onClick={(e) => {
-                  handleClick(skill.slug, e);
+                  handleClick(skill.slug, index, e);
                 }}
                 key={skill.slug}
               >
                 {skill.slug}
               </Button>
             ))}
-            <div className="radarholder">
-              <Radar data={skdata} options={options} />
-            </div>
+          </div>
+        </div>
+        <div className="wrapper-m">
+          <div className="radarholder">
+            <Radar data={skdata} options={radarOptions} />
           </div>
         </div>
       </section>
@@ -155,10 +161,7 @@ const Skills = () => {
           <h2 className="title red">Developer Stacks</h2>
         </InViewMonitor>
         <div className="wrapper">
-          <Stack type="LNMP" />
-          <Stack type="nodejs" />
-          <Stack type="cloud" />
-          <Stack type="wordpress" />
+          <Stack />
         </div>
       </section>
 

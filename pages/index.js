@@ -27,10 +27,7 @@ const IndexPage = ({ portfolioBlockData }) => {
         </InViewMonitor>
 
         <div className="wrapper">
-          <Stack type="LNMP" />
-          <Stack type="nodejs" />
-          <Stack type="cloud" />
-          <Stack type="wordpress" />
+          <Stack />
         </div>
         <div className="center">
           <InViewMonitor
