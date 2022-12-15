@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build && next export && next-export-optimize-images",
     "start": "next start",
     "copyimages": "node ./bin/copy-images.mjs",
     "deploy": "npm run build && touch ./out/.nojekyll && cp ./CNAME out/ && gh-pages -d out -t true",
@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "gh-pages": "^4.0.0",
+    "next-export-optimize-images": "^1.9.2",
     "sass": "^1.54.9"
   }
 }
