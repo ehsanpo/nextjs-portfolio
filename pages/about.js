@@ -25,33 +25,27 @@ const NotFoundPage = () => {
           <div style={{ flex: 4 }}>
             <h2>Hej Hej, I’m Ehsan Pourhadi.</h2>
             <p>
-              I am a self-learned web developer, web designer & producer
-              providing digital solutions. I have experience of over ten years,
-              and I offer an enjoyable experience to my customers.
+              I am a self-taught software developer, designer, and producer with
+              over 10 years of experience in the industry.
             </p>
             <p>
-              At a young age, I started designing. It was a hobby then, but
-              slowly grew into passion, the more I learned about it. I started
-              as a webmaster, and then gradually branched into coding javascript
-              and then jumping into front-end and back-end developer. Currently,
-              I am an experienced full stack developer looking to provide you
-              the best possible solution.
+              I am passionate about creating enjoyable and meaningful digital
+              experiences for my clients and strive to provide the best possible
+              solutions. My skill set includes web development using LAMP/NodeJS
+              stacks, with a strong foundation in WordPress and Laravel for the
+              backend and expertise in Javascript and HTML/CSS for the
+              front-end.
             </p>
             <p>
-              My skill set consists not only of web development but also
-              LAMP/NodeJS stacks. I have an excellent grasp of WordPress &
-              Laravel developing on the backend while specializing in JS and
-              HTML/CSS on the front-end.
+              In addition to web development, I have a deep understanding of
+              user interface design, logo and identity creation, and search
+              engine optimization. I also have extensive knowledge of multimedia
+              and mobile development, and am always seeking out new concepts and
+              techniques to enhance my skills and the user experience.
             </p>
             <p>
-              My knowledge base is extensive on user interface design,
-              logo/identity creation. Furthermore, I also specialize in SEO. I
-              have tremendous knowledge in multimedia and mobile development,
-              thanks to my 10+ years of work experience. I am on the lookout for
-              different concepts, learning new techniques, and working on
-              various platforms to provide the best solution to you! My goal is
-              to utilize my current skills, learn new things, incorporate into
-              the work, and give you the best of the best possible experience.
+              Thank you for visiting my website and I hope to have the
+              opportunity to work with you soon.
             </p>
           </div>
           <div>

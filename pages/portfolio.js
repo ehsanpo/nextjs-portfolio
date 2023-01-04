@@ -18,14 +18,16 @@ const Portfolio = ({ portfolioBlockData }) => {
         <div className="wrapper">
           <div className="wrapper-m">
             <div>
-              Here are my best work put forth for you to see. I do various
-              projects, and my concept is that focusing on the complete
-              satisfaction of the end user. I see things from both, as a
-              developer’s perspective and the end user’s perspective.
-              <br />I do front-end, back-end, and site maintenance and also work
-              as a system admin. Please have a look below into my current
-              portfolio. I am sure you’ll love the work that I have created, and
-              if you have any questions, please do not hesitate to ask.
+              Welcome to my online portfolio! As a developer, I am committed to
+              creating high-quality projects that focus on the complete
+              satisfaction of the end user. My skillset includes front-end,
+              back-end, and site maintenance, as well as experience as a system
+              administrator. <br />
+              On this page, you will find a selection of my best work. I have
+              included a variety of projects that showcase my skills and
+              abilities, and I hope you will enjoy exploring them. If you have
+              any questions or would like to discuss a potential project, please
+              don't hesitate to contact me. Thank you for visiting!
             </div>
           </div>
         </div>
@@ -52,8 +54,8 @@ export async function getStaticProps() {
     };
   });
 
-  const sortedpost =  posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
+  const sortedpost = posts.sort(
+    (a, b) => new Date(b.data.date) - new Date(a.data.date)
+  );
   return { props: { portfolioBlockData: sortedpost } };
-
 }
-

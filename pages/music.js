@@ -26,22 +26,21 @@ const NotFoundPage = () => {
       <section className="bg-color-3">
         <div className="wrapper">
           <div className="wrapper-m ">
-            Music is a part of our DNA, and since childhood, I have loved music.
-            So have you, it’s an essential part of us. Music takes us to another
-            world. It heals our body and mind. It gets us through tough times
-            and helps us be a better person. Music is magical. It has something
-            exciting that affects millions of people around the world.
+            Welcome to my music page! Music has always been a part of my life
+            and I am passionate about creating and sharing it with the world. To
+            me, music is more than just a form of entertainment - it has the
+            power to connect and heal us, to take us to another world and help
+            us be the best versions of ourselves.
             <br />
             <br />
-            I try to make music with a simple goal. I want to communicate with
-            the world through this ideal means of communication. Through music,
-            people connect and create better bonds. I produce music
-            professionally, and I have created songs for various companies and
-            artists. My music may not be on the top record list, but the music I
-            produce is from the heart.
+            As a professional music producer, I have had the opportunity to
+            create songs for various companies and artists, and while my music
+            may not always be at the top of the charts, it is always made with
+            heart and soul.
             <br />
-            <br />
-            Give it a listen, and I hope you enjoy what I create.
+            <br />I hope you will take a moment to listen and enjoy the music
+            that I have created. Thank you for visiting and I hope you find
+            something that speaks to you.
           </div>
         </div>
       </section>
