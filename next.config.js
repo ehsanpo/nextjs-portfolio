@@ -16,6 +16,7 @@ module.exports = withExportImages({
       "/gallery": { page: "/gallery" },
       "/skills": { page: "/skills" },
       "/portfolio": { page: "/portfolio" },
+      "/job": { page: "/job" },
     };
   },
 });
