@@ -1,7 +1,13 @@
 import "../scss/main.scss";
+import Script from "next/script";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Script src="https://scripts.withcabin.com/hello.js" />
+      <Component {...pageProps} />
+    </>
+  );
 }
 
 // Only uncomment this method if you have blocking data requirements for
