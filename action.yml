@@ -1,0 +1,9 @@
+name: Pull Request Badge
+description: Adds badges to Pull Request based on configuration
+inputs:
+  repo-token:
+    description: "The GitHub token to use for authentication"
+    required: true
+runs:
+  using: "node12"
+  main: "index.js"
