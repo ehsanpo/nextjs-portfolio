@@ -11,6 +11,6 @@ jobs:
       - name: Install dependencies
         run: npm install js-yaml axios
       - name: Add badges to Pull Request
-        uses: ./
+        uses: ./.github/workflows/pull_request_badge.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
