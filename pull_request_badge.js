@@ -100,7 +100,9 @@ async function run() {
 
   const badges = config.badges
     .filter((badge) => evaluateCondition(badge.condition, pullRequestInfo))
-    .map(createBadgeMarkdown(badge, pullRequestInfo));
+    .map(function (badge) {
+      return createBadgeMarkdown(badge, pullRequestInfo);
+    });
 
   console.log(badges, "badges");
 
