@@ -90,9 +90,7 @@ async function run() {
   const body = pullRequestInfo.pullRequest.body || "";
   const newBody = `${badges.join("\n")}\n\n${body}EPXXX`;
 
-  const myToken = core.getInput("myToken");
-
-  const octokit = github.getOctokit(myToken);
+  const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
 
   const { data: pullRequest2 } = await octokit.rest.pulls.update({
     owner: "ehsanpo",
