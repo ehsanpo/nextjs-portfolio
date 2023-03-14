@@ -10,9 +10,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Install dependencies
-        run: npm install js-yaml axios @actions/core @actions/github
+        run: npm install js-yaml @actions/github
       - name: Add badges to Pull Request
         uses: ./
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TERA: ${{github.event.pull_request.title}}

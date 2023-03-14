@@ -1,6 +1,6 @@
 badges:
   - name: "Preview"
-    image: "https://img.shields.io/badge/preview-available-blue"
+    image: "https://img.shields.io/badge/Preview-orange"
     link: "https://preview.example.com"
     condition: "true"
   - name: "Redmine"
