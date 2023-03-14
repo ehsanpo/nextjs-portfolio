@@ -71,11 +71,13 @@ async function run() {
 
   console.log("pullRequestInfo", pullRequestInfo);
 
-  const config = yaml.safeLoad(fs.readFileSync(configPath, "utf8"));
+  const config = yaml.load(fs.readFileSync(configPath, "utf8"));
 
   const badges = config.badges
     .filter((badge) => evaluateCondition(badge.condition, pullRequestInfo))
     .map(createBadgeMarkdown);
+
+  console.log(badges, "badges");
 
   if (badges.length === 0) {
     console.log("No badges to display");
