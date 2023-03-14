@@ -125,8 +125,8 @@ async function run() {
   const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
 
   const { data: pullRequest2 } = await octokit.rest.pulls.update({
-    owner: "ehsanpo",
-    repo: "nextjs-portfolio",
+    owner: github.repository_owner,
+    repo: process.env.GITHUB_REPOSITORY.split("/")[1],
     pull_number: pullRequest.number,
     body: newBody,
   });
