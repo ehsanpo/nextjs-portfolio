@@ -1,8 +1,8 @@
 const fs = require("fs");
 const yaml = require("js-yaml");
 const axios = require("axios");
-import * as core from "@actions/core";
-import * as github from "@actions/github";
+const core = require("@actions/core");
+const github = require("@actions/github");
 
 const sha = core.getInput("sha") || github.context.sha;
 console.log("Yea ehsan");
