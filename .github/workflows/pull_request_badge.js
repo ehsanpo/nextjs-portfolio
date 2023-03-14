@@ -69,6 +69,10 @@ function createBadgeMarkdown(badge) {
 }
 
 async function run() {
+  const { client_payload } = require(process.env.GITHUB_EVENT_PATH);
+  console.log(client_payload);
+  return 0;
+
   const pullRequestInfo = await getPullRequestInfo();
   const config = yaml.safeLoad(fs.readFileSync(configPath, "utf8"));
 
