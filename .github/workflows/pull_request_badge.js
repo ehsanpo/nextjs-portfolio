@@ -1,10 +1,38 @@
-const fs = require("/usr/local/lib/node_modules/fs");
-const yaml = require("/usr/local/lib/node_modules/js-yaml");
 const github = require("/usr/local/lib/node_modules/@actions/github");
 const pullRequest = github.context.payload.pull_request;
 
 const configPath = ".github/pr-badge.yml";
 const issuePrefixRegex = /^(\w+-\d+)/i;
+const configBadges = {
+  badges: [
+    {
+      name: "Preview",
+      image: "https://img.shields.io/badge/Preview-orange",
+      link: "https://preview.example.com",
+      condition: "true",
+    },
+    {
+      name: "Redmine",
+      image: "https://img.shields.io/badge/size-small-yellow",
+      condition: "true",
+    },
+    {
+      name: "Size - Large",
+      image: "https://img.shields.io/badge/size-large-red",
+      condition: "size > 1000",
+    },
+    {
+      name: "Size - Small",
+      image: "https://img.shields.io/badge/size-small-blue",
+      condition: "size < 1000",
+    },
+    {
+      name: "Test",
+      image: "https://img.shields.io/badge/size-small-yellow",
+      condition: "true",
+    },
+  ],
+};
 
 function getIssuePrefix(title) {
   const matches = title.match(issuePrefixRegex);
@@ -78,8 +106,7 @@ function createBadgeMarkdown(badge, pullRequestInfo) {
 
 async function run() {
   const pullRequestInfo = await getPullRequestInfo();
-  const config = yaml.load(fs.readFileSync(configPath, "utf8"));
-  const badges = config.badges
+  const badges = configBadges.badges
     .filter((badge) => evaluateCondition(badge.condition, pullRequestInfo))
     .map(function (badge) {
       return createBadgeMarkdown(badge, pullRequestInfo);
