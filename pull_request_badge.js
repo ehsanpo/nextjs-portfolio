@@ -65,7 +65,7 @@ function evaluateCondition(condition, pullRequestInfo) {
 function createBadgeMarkdown(badge, pullRequestInfo) {
   if (badge.name === "Preview") {
     badge.link =
-      "http:// " + pullRequestInfo.branchName + " front-a7u.pages.dev/";
+      "http://" + pullRequestInfo.branchName + "/front-a7u.pages.dev/";
   }
   if (badge.name === "Redmine") {
     // an reg ex that take first numbers from Xstring until a "-"

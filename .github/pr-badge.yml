@@ -12,6 +12,6 @@ badges:
   - name: "Redmine"
     image: "https://img.shields.io/badge/size-small-yellow"
     condition: "true"
-  - name: "TEst"
+  - name: "Test"
     image: "https://img.shields.io/badge/size-small-yellow"
     condition: "true"
