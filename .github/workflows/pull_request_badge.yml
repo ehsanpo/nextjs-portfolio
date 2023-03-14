@@ -16,4 +16,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PAYLOAD: ${{github.event.client_payload}}
-          TERA: ${{github.event.pull_request}}
+          TERA: ${{github.event.pull_request.title}}
