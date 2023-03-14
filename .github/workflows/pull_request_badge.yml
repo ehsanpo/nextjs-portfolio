@@ -10,7 +10,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Install dependencies
-        run: npm install -g js-yaml @actions/github
+        run: npm install -g js-yaml @actions/github fs
       - name: Add badges to Pull Request
         uses: ./
         env:
