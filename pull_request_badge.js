@@ -110,9 +110,9 @@ async function run() {
     console.log("No badges to display");
     return;
   }
-  console.log(body);
 
   const body = pullRequestInfo.pullRequest.body || "";
+  console.log(body);
   // find the first line that is not a badge
   const firstLine = body.split("\n").find((line) => !line.startsWith("[!["));
   const newBody = `${badges.join("\n")}\n\n${body}`;
