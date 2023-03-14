@@ -95,7 +95,7 @@ async function run() {
   const { data: pullRequest2 } = await octokit.rest.pulls.update({
     owner: "ehsanpo",
     repo: "nextjs-portfolio",
-    pull_number: pullRequest.pull_number,
+    pull_number: pullRequest.number,
     body: newBody,
   });
 
