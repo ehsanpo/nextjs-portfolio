@@ -124,9 +124,13 @@ async function run() {
 
   const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
 
+  console.log(github.repository_owner);
+  console.log(github.repository);
+  console.log(github.repository.split("/")[1]);
+
   const { data: pullRequest2 } = await octokit.rest.pulls.update({
     owner: github.repository_owner,
-    repo: process.env.GITHUB_REPOSITORY.split("/")[1],
+    repo: github.repository.split("/")[1],
     pull_number: pullRequest.number,
     body: newBody,
   });
