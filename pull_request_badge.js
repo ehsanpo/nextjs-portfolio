@@ -1,6 +1,19 @@
 const fs = require("fs");
 const yaml = require("js-yaml");
 const axios = require("axios");
+import * as core from "@actions/core";
+import * as github from "@actions/github";
+
+const sha = core.getInput("sha") || github.context.sha;
+console.log("Yea ehsan");
+console.log(sha);
+
+console.log(github.context);
+
+console.log(github.context.payload.pull_request);
+console.log(github.context.payload.pull_request.title);
+
+return 0;
 
 const configPath = ".github/pr-badge.yml";
 const issuePrefixRegex = /^(\w+-\d+)/i;
