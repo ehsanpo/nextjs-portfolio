@@ -1,6 +1,6 @@
-const fs = require("fs");
-const yaml = require("js-yaml");
-const github = require("@actions/github");
+const fs = require("/usr/local/lib/node_modules/fs");
+const yaml = require("/usr/local/lib/node_modules/js-yaml");
+const github = require("/usr/local/lib/node_modules/@actions/github");
 const pullRequest = github.context.payload.pull_request;
 
 const configPath = ".github/pr-badge.yml";
