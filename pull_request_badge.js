@@ -114,10 +114,14 @@ async function run() {
   const body = pullRequestInfo.pullRequest.body || "";
   console.log(body);
   // find the first line that is not a badge
-  const firstLine = body.split("\n").find((line) => !line.startsWith("[!["));
+  // const firstLine = body.split("\n").find((line) => !line.startsWith("[!["));
   //remove line we found
-  const bodyWithoutBadges = body.replace(firstLine, "");
-  const newBody = `${badges.join("\n")}\n\n${bodyWithoutBadges}`;
+  // const bodyWithoutBadges = body.replace(firstLine, "");
+
+  //remove all line starting with [![
+  const bodyWithoutBadges2 = body.replace(/\[!\[.*\]\(.*\)\]\(.*\)/g, "");
+
+  const newBody = `${badges.join("\n")}\n\n${bodyWithoutBadges2}`;
 
   const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
 
