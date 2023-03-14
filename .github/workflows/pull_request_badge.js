@@ -11,11 +11,11 @@ function getIssuePrefix(title) {
 }
 
 async function getPullRequestInfo() {
-  console.log("t444");
+  console.log("no");
   const { client_payload } = require(process.env.GITHUB_EVENT_PATH);
-
   console.log("Etest3");
-  console.log(client_payload);
+  console.log(process.env);
+  console.log(process.env.TERA);
 
   return 0;
   const response = await axios.get(process.env.GITHUB_EVENT_PATH, {

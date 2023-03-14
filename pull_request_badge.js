@@ -60,7 +60,7 @@ function createBadgeMarkdown(badge) {
 }
 
 async function run() {
-  console.log("t444");
+  console.log("yes");
   const { client_payload } = require(process.env.GITHUB_EVENT_PATH);
 
   console.log("Etest3");
