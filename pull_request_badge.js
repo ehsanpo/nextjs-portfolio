@@ -47,6 +47,7 @@ function evaluateCondition(condition, pullRequestInfo) {
     title: pullRequestInfo.title,
     branchName: pullRequestInfo.branchName,
     size: pullRequestInfo.size,
+    title: pullRequestInfo.title,
   };
 
   preview_available = true;
@@ -57,10 +58,31 @@ function evaluateCondition(condition, pullRequestInfo) {
       .map((varName) => `const ${varName} = "${vars[varName]}";`)
       .join("\n") + condition;
 
+  console.log("2code ", code);
   return eval(code);
 }
 
-function createBadgeMarkdown(badge) {
+function createBadgeMarkdown(badge, pullRequestInfo) {
+  if (badge.name === "Preview") {
+    badge.link =
+      "http:// " + pullRequestInfo.branchName + " front-a7u.pages.dev/";
+  }
+  if (badge.name === "Redmine") {
+    // an reg ex that take first numbers from Xstring until a "-"
+    const redmineId = pullRequestInfo.title.match(/\d+/)[0];
+    badge.link = "https://redmine.bredband2.se/" + redmineId;
+    badge.image = `https://img.shields.io/badge/redmine-${redmineId}-red`;
+  }
+  if (badge.name === "Test") {
+    // a reg exthat check for " # Test" and an paragraph after it in the body of the pull request
+    const test = pullRequestInfo.pullRequest.body.match(/# Testguide[\s\S]/);
+    if (test) {
+      badge.image = `https://img.shields.io/badge/Test_Plan-pass-green`;
+    } else {
+      badge.image = `https://img.shields.io/badge/missing-test_plan-red`;
+    }
+  }
+
   const image = badge.image;
   const link = badge.link || "";
 
@@ -78,7 +100,7 @@ async function run() {
 
   const badges = config.badges
     .filter((badge) => evaluateCondition(badge.condition, pullRequestInfo))
-    .map(createBadgeMarkdown);
+    .map(createBadgeMarkdown(badge, pullRequestInfo));
 
   console.log(badges, "badges");
 
@@ -99,11 +121,9 @@ async function run() {
     body: newBody,
   });
 
-  console.log(pullRequest2);
-
-  // console.log(
-  //   `Added ${badges.length} badge(s) to Pull Request #${pullRequestInfo.pullRequest.number}`
-  // );
+  console.log(
+    `Added ${badges.length} badge(s) to Pull Request #${pullRequestInfo.pullRequest.number}`
+  );
 }
 
 run();
