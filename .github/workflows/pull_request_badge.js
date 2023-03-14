@@ -11,6 +11,7 @@ function getIssuePrefix(title) {
 }
 
 async function getPullRequestInfo() {
+  console.log("t444");
   const { client_payload } = require(process.env.GITHUB_EVENT_PATH);
 
   console.log("Etest3");
@@ -22,6 +23,8 @@ async function getPullRequestInfo() {
       Accept: "application/vnd.github.v3+json",
     },
   });
+
+  return 0;
 
   console.log(response);
 
