@@ -11,12 +11,19 @@ function getIssuePrefix(title) {
 }
 
 async function getPullRequestInfo() {
+  const { client_payload } = require(process.env.GITHUB_EVENT_PATH);
+
+  console.log("Etest3");
+  console.log(client_payload);
+
   const response = await axios.get(process.env.GITHUB_EVENT_PATH, {
     headers: {
       Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
       Accept: "application/vnd.github.v3+json",
     },
   });
+
+  console.log(response);
 
   const pullRequest = response.data;
   const title = pullRequest.title;
