@@ -64,6 +64,7 @@ async function run() {
   const { client_payload } = require(process.env.GITHUB_EVENT_PATH);
 
   console.log("Etest3");
+  console.log(process.env.PAYLOAD);
   console.log(client_payload);
 
   return 0;
