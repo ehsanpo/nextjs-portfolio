@@ -15,5 +15,4 @@ jobs:
         uses: ./
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PAYLOAD: ${{github.event}}
           TERA: ${{github.event.pull_request.title}}
