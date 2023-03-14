@@ -3,17 +3,17 @@ const yaml = require("js-yaml");
 const axios = require("axios");
 const core = require("@actions/core");
 const github = require("@actions/github");
+const pullRequest = github.context.payload.pull_request;
+// const sha = core.getInput("sha") || github.context.sha;
+// console.log("Yea ehsan");
+// console.log(sha);
 
-const sha = core.getInput("sha") || github.context.sha;
-console.log("Yea ehsan");
-console.log(sha);
+// console.log(github.context);
 
-console.log(github.context);
+// console.log(github.context.payload.pull_request);
+// console.log(github.context.payload.pull_request.title);
 
-console.log(github.context.payload.pull_request);
-console.log(github.context.payload.pull_request.title);
-
-return 0;
+// return 0;
 
 const configPath = ".github/pr-badge.yml";
 const issuePrefixRegex = /^(\w+-\d+)/i;
@@ -24,14 +24,6 @@ function getIssuePrefix(title) {
 }
 
 async function getPullRequestInfo() {
-  const response = await axios.get(process.env.GITHUB_EVENT_PATH, {
-    headers: {
-      Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-      Accept: "application/vnd.github.v3+json",
-    },
-  });
-
-  const pullRequest = response.data;
   const title = pullRequest.title;
   const branchName = pullRequest.head.ref;
   const issuePrefix = getIssuePrefix(title) || getIssuePrefix(branchName);
@@ -74,16 +66,11 @@ function createBadgeMarkdown(badge) {
 
 async function run() {
   console.log("yes");
-  const { client_payload } = require(process.env.GITHUB_EVENT_PATH);
-
-  console.log("Etest3");
-  console.log(process.env);
-  console.log(process.env.TERA);
-  console.log(client_payload);
-
-  return 0;
 
   const pullRequestInfo = await getPullRequestInfo();
+
+  console.log("pullRequestInfo", pullRequestInfo);
+
   const config = yaml.safeLoad(fs.readFileSync(configPath, "utf8"));
 
   const badges = config.badges
@@ -96,24 +83,24 @@ async function run() {
   }
 
   const body = pullRequestInfo.pullRequest.body || "";
-  const newBody = `${badges.join("\n")}\n\n${body}`;
+  const newBody = `${badges.join("\n")}\n\n${body}EPXXX`;
 
-  await axios.patch(
-    pullRequestInfo.pullRequest.url,
-    {
-      body: newBody,
-    },
-    {
-      headers: {
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-        Accept: "application/vnd.github.v3+json",
-      },
-    }
-  );
+  const myToken = core.getInput("myToken");
 
-  console.log(
-    `Added ${badges.length} badge(s) to Pull Request #${pullRequestInfo.pullRequest.number}`
-  );
+  const octokit = github.getOctokit(myToken);
+
+  const { data: pullRequest2 } = await octokit.rest.pulls.update({
+    owner: "ehsanpo",
+    repo: "nextjs-portfolio",
+    pull_number: pullRequest.pull_number,
+    body: newBody,
+  });
+
+  console.log(pullRequest2);
+
+  // console.log(
+  //   `Added ${badges.length} badge(s) to Pull Request #${pullRequestInfo.pullRequest.number}`
+  // );
 }
 
 run();
