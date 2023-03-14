@@ -10,7 +10,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Install dependencies
-        run: npm install js-yaml axios
+        run: npm install js-yaml axios @actions/core @actions/github
       - name: Add badges to Pull Request
         uses: ./
         env:
