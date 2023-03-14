@@ -1,7 +1,7 @@
 const github = require("/usr/local/lib/node_modules/@actions/github");
 const pullRequest = github.context.payload.pull_request;
 
-console.log(github.context);
+// console.log(github.context);
 console.log(github.context.payload);
 
 const configPath = ".github/pr-badge.yml";
@@ -127,10 +127,11 @@ async function run() {
 
   const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
 
-  console.log(github.context.repository.full_name.split("/")[1]);
+  console.log(github.context.payload.repository.full_name.split("/")[1]);
+  console.log(github.context.payload.repository.name);
 
   const { data: pullRequest2 } = await octokit.rest.pulls.update({
-    owner: github.context.repository_owner,
+    owner: github.context.payload.repository.full_name.split("/")[1],
     repo: github.context.repository.name,
     pull_number: pullRequest.number,
     body: newBody,
