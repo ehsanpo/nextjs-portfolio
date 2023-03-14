@@ -1,6 +1,9 @@
 const github = require("/usr/local/lib/node_modules/@actions/github");
 const pullRequest = github.context.payload.pull_request;
 
+console.log(github.context);
+console.log(github.context.payload);
+
 const configPath = ".github/pr-badge.yml";
 const issuePrefixRegex = /^(\w+-\d+)/i;
 const configBadges = {
