@@ -115,7 +115,9 @@ async function run() {
   console.log(body);
   // find the first line that is not a badge
   const firstLine = body.split("\n").find((line) => !line.startsWith("[!["));
-  const newBody = `${badges.join("\n")}\n\n${body}`;
+  //remove line we found
+  const bodyWithoutBadges = body.replace(firstLine, "");
+  const newBody = `${badges.join("\n")}\n\n${bodyWithoutBadges}`;
 
   const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
 
