@@ -49,6 +49,9 @@ function evaluateCondition(condition, pullRequestInfo) {
     size: pullRequestInfo.size,
   };
 
+  preview_available = true;
+  size = vars.size;
+
   const code =
     Object.keys(vars)
       .map((varName) => `const ${varName} = "${vars[varName]}";`)
