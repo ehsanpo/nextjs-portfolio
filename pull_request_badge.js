@@ -90,21 +90,13 @@ function createBadgeMarkdown(badge, pullRequestInfo) {
 }
 
 async function run() {
-  console.log("yes");
-
   const pullRequestInfo = await getPullRequestInfo();
-
-  // console.log("pullRequestInfo", pullRequestInfo);
-
   const config = yaml.load(fs.readFileSync(configPath, "utf8"));
-
   const badges = config.badges
     .filter((badge) => evaluateCondition(badge.condition, pullRequestInfo))
     .map(function (badge) {
       return createBadgeMarkdown(badge, pullRequestInfo);
     });
-
-  // console.log(badges, "badges");
 
   if (badges.length === 0) {
     console.log("No badges to display");
@@ -112,16 +104,9 @@ async function run() {
   }
 
   const body = pullRequestInfo.pullRequest.body || "";
-  console.log(body);
-  // find the first line that is not a badge
-  // const firstLine = body.split("\n").find((line) => !line.startsWith("[!["));
-  //remove line we found
-  // const bodyWithoutBadges = body.replace(firstLine, "");
-
   //remove all line starting with [![
   const bodyWithoutBadges2 = body.replace(/\[!\[.*\]\(.*\)\]\(.*\)/g, "");
-
-  const newBody = `${badges.join("\n")}\n\n${bodyWithoutBadges2}`;
+  const newBody = `${badges.join(" ")}\n\n${bodyWithoutBadges2}`;
 
   const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
 
