@@ -17,14 +17,13 @@ async function getPullRequestInfo() {
   console.log("Etest3");
   console.log(client_payload);
 
+  return 0;
   const response = await axios.get(process.env.GITHUB_EVENT_PATH, {
     headers: {
       Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
       Accept: "application/vnd.github.v3+json",
     },
   });
-
-  return 0;
 
   console.log(response);
 
