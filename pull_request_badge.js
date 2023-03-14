@@ -58,20 +58,20 @@ function evaluateCondition(condition, pullRequestInfo) {
       .map((varName) => `const ${varName} = "${vars[varName]}";`)
       .join("\n") + condition;
 
-  console.log("2code ", code);
+  // console.log("2code ", code);
   return eval(code);
 }
 
 function createBadgeMarkdown(badge, pullRequestInfo) {
   if (badge.name === "Preview") {
     badge.link =
-      "http://" + pullRequestInfo.branchName + "/front-a7u.pages.dev/";
+      "http://" + pullRequestInfo.branchName + ".front-a7u.pages.dev/";
   }
   if (badge.name === "Redmine") {
     // an reg ex that take first numbers from Xstring until a "-"
     const redmineId = pullRequestInfo.title.match(/\d+/)[0];
     badge.link = "https://redmine.bredband2.se/" + redmineId;
-    badge.image = `https://img.shields.io/badge/redmine-${redmineId}-red`;
+    badge.image = `https://img.shields.io/badge/Redmine-${redmineId}-red`;
   }
   if (badge.name === "Test") {
     // a reg exthat check for " # Test" and an paragraph after it in the body of the pull request
@@ -79,7 +79,7 @@ function createBadgeMarkdown(badge, pullRequestInfo) {
     if (test) {
       badge.image = `https://img.shields.io/badge/Test_Plan-pass-green`;
     } else {
-      badge.image = `https://img.shields.io/badge/missing-test_plan-red`;
+      badge.image = `https://img.shields.io/badge/Missing-test_plan-red`;
     }
   }
 
@@ -94,7 +94,7 @@ async function run() {
 
   const pullRequestInfo = await getPullRequestInfo();
 
-  console.log("pullRequestInfo", pullRequestInfo);
+  // console.log("pullRequestInfo", pullRequestInfo);
 
   const config = yaml.load(fs.readFileSync(configPath, "utf8"));
 
@@ -104,15 +104,18 @@ async function run() {
       return createBadgeMarkdown(badge, pullRequestInfo);
     });
 
-  console.log(badges, "badges");
+  // console.log(badges, "badges");
 
   if (badges.length === 0) {
     console.log("No badges to display");
     return;
   }
+  console.log(body);
 
   const body = pullRequestInfo.pullRequest.body || "";
-  const newBody = `${badges.join("\n")}\n\n${body}EPXXX`;
+  // find the first line that is not a badge
+  const firstLine = body.split("\n").find((line) => !line.startsWith("[!["));
+  const newBody = `${badges.join("\n")}\n\n${body}`;
 
   const octokit = github.getOctokit(process.env.GITHUB_TOKEN);
 

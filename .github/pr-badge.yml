@@ -7,7 +7,7 @@ badges:
     image: "https://img.shields.io/badge/size-large-red"
     condition: "size > 1000"
   - name: "Size - Small"
-    image: "https://img.shields.io/badge/size-large-red"
+    image: "https://img.shields.io/badge/size-small-blue"
     condition: "size < 1000"
   - name: "Redmine"
     image: "https://img.shields.io/badge/size-small-yellow"
