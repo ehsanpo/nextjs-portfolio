@@ -1,11 +1,9 @@
 import * as React from "react";
-import Loadable from "@loadable/component";
 import Layout from "../components/layout";
 import SeO from "../components/seo";
-import InViewMonitor from "react-inview-monitor";
 import Award from "../components/Award";
-import Button from "../components/Button";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 
 const Imagehover = dynamic(() => import("../components/Imagehover"), {
   ssr: false,
@@ -64,7 +62,13 @@ const NotFoundPage = () => {
                     Software developer at Bredband2
                     <span className="timelineDate">2020</span>
                   </h4>
-                  <p>Working with Gatsby &amp; Ruby on Rails</p>
+                  <p>
+                    Working with Gatsby, NextJs &amp; Ruby on Rails.
+                    <br />
+                    <Link href="/portfolio/bredband2/">
+                      Read more here &gt;
+                    </Link>
+                  </p>
                 </div>
               </li>
               <li data-aos="fade-left" className="aos-init aos-animate">

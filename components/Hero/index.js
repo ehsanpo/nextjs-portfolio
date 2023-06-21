@@ -1,7 +1,6 @@
 import React from "react";
 import style from "./Hero.module.scss";
 import Button from "../Button";
-import logo from "./logo.svg";
 const Hero = () => {
   // const ImageArray = [
   //   "/images/3/5.png",
