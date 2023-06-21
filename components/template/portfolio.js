@@ -164,7 +164,10 @@ const IndexPage = ({ data, content }) => {
                       </>
                     }
                   >
-                    <div>{portfolioBlockBody}</div>
+                    <div
+                      className="blog-content"
+                      dangerouslySetInnerHTML={{ __html: portfolioBlockBody }}
+                    />
                   </Box>
                 )}
 
