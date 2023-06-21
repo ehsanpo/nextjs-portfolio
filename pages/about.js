@@ -59,8 +59,17 @@ const NotFoundPage = () => {
               <li data-aos="fade-left" className="aos-init aos-animate">
                 <div className="timelineUnit">
                   <h4>
+                    Software developer at Telavox
+                    <span className="timelineDate">2023</span>
+                  </h4>
+                  <p>Working with Angular, React, Java &amp; ElectronJs.</p>
+                </div>
+              </li>
+              <li data-aos="fade-left" className="aos-init aos-animate">
+                <div className="timelineUnit">
+                  <h4>
                     Software developer at Bredband2
-                    <span className="timelineDate">2020</span>
+                    <span className="timelineDate">2020 - 2023</span>
                   </h4>
                   <p>
                     Working with Gatsby, NextJs &amp; Ruby on Rails.

@@ -31,7 +31,7 @@ bilder:
   - "bredband2-v2.png"
   - "1.jpg"
 port_date:
-  - "2021 - 2022"
+  - "2021 - 2023"
 ---
 
 <h2> Case Study: Driving Digital Transformation and Enhancing Customer Experience at Bredband2</h2>
@@ -41,11 +41,11 @@ port_date:
 <p>During my tenure as a full-stack developer at Bredband2, a leading telecommunications company, I had the opportunity to contribute to various critical projects that significantly impacted the organization's digital presence, security measures, and overall customer experience. In this case study, I will highlight three key initiatives that exemplify my skills, dedication, and problem-solving abilities. </p>
 
 <br />
-<h3> Project 1: Resolving Critical Security Bug </h3>
+<!-- <h3> Project 1: Resolving Critical Security Bug </h3>
 
-<p>Within a few months of joining Bredband2, I identified a critical security vulnerability that allowed unauthorized users to manipulate customer email addresses. Exploiting this flaw, they could easily reset passwords and gain unauthorized access to user accounts. Addressing this issue required comprehensive analysis and a robust fix to safeguard customer data and restore trust. </p>
+<!-- <p>Within a few months of joining Bredband2, I identified a critical security vulnerability that allowed unauthorized users to manipulate customer email addresses. Exploiting this flaw, they could easily reset passwords and gain unauthorized access to user accounts. Addressing this issue required comprehensive analysis and a robust fix to safeguard customer data and restore trust. </p>
 
-<p>Collaborating closely with the development team, I diligently investigated the root cause of the vulnerability and formulated an effective solution. Resolving the bug proved challenging, and it took considerable time and effort to implement the necessary safeguards. However, my perseverance paid off, as we successfully rectified the vulnerability, bolstering the company's security posture and ensuring the protection of customer information.</p>
+<p>Collaborating closely with the development team, I diligently investigated the root cause of the vulnerability and formulated an effective solution. Resolving the bug proved challenging, and it took considerable time and effort to implement the necessary safeguards. However, my perseverance paid off, as we successfully rectified the vulnerability, bolstering the company's security posture and ensuring the protection of customer information.</p> -->
 
 <br />
 <h3>Project 2: Redesigning the Digital Identity </h3>
@@ -67,9 +67,9 @@ port_date:
 <p> Throughout my journey at Bredband2, I continually pursued personal and professional development, acquiring new skills and certifications to enhance my capabilities as a versatile developer. Some noteworthy achievements during my time include:</p>
 
 <ul>
-    <li>Proficiency in Ruby on Rails: I gained expertise in developing web applications using Ruby on Rails, enabling efficient and scalable solutions for Bredband2's platform.></li>
+    <li>Proficiency in Ruby on Rails: I gained expertise in developing web applications using Ruby on Rails, enabling efficient and scalable solutions for Bredband2's platform.</li>
 
-    <li> Cloudflare Pages: I expanded my knowledge and hands-on experience with Cloudflare Pages, harnessing its capabilities to optimize website performance and security. </li>
+    <li>Cloudflare Pages: I expanded my knowledge and hands-on experience with Cloudflare Pages, harnessing its capabilities to optimize website performance and security. </li>
 
     <li>Certifications: I pursued Google Analytics and UX certifications, validating my expertise in data-driven decision-making and user-centric design principles.</li>
 
