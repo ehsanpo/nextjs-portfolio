@@ -1,32 +1,41 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../layout";
 import Seo from "../seo";
-import { Link } from "next/link";
+import Link from "next/link";
 import Button from "../Button";
 import Image from "next/image";
 import Box from "../Box/EmptyBox";
 import NextImage from "next/image";
 
+const NextArticle = ({ data }) => {
+  if (Object.keys(data.nextPost).length === 0) {
+    return null;
+  }
+  return (
+    <Link href={data.nextPost.permalink} className="next">
+      <span>Next</span> <br />
+      {data.nextPost.title}
+    </Link>
+  );
+};
+
+const PrevArticle = ({ data }) => {
+  if (Object.keys(data.prevPost).length === 0) {
+    return null;
+  }
+  return (
+    <Link href={data.prevPost.permalink}>
+      <span>Previous</span> <br />
+      {data.prevPost.title}
+    </Link>
+  );
+};
+
 const IndexPage = ({ data, content }) => {
-  const portfolioBlockData = data;
-  const permalink = "/images/" + data.permalink + "/";
+  const portfolioBlockData = data.post;
+  const permalink = "/images/" + data.post.permalink + "/";
   const portfolioBlockBody = content;
   const [headerClose, setHeaderClose] = useState("");
-
-  // const { next, previous } = pageContext;
-  // const nextArticle = next && (
-  // 	<Link to={next.frontmatter.permalink} className="next">
-  // 		<span>Next</span> <br />
-  // 		{next.frontmatter.title}
-  // 	</Link>
-  // );
-
-  // const prevArticle = previous && (
-  // 	<Link to={previous.frontmatter.permalink}>
-  // 		<span>Previous</span> <br />
-  // 		{previous.frontmatter.title}
-  // 	</Link>
-  // );
 
   useEffect(() => {
     let open = setTimeout(function () {
@@ -57,8 +66,6 @@ const IndexPage = ({ data, content }) => {
             <div className="portfolio-topImage">
               {portfolioBlockData.logo && (
                 <Image
-                  objectFit="cover"
-                  // alt="test"
                   className="portfolio-image"
                   width={350}
                   height={216}
@@ -82,8 +89,7 @@ const IndexPage = ({ data, content }) => {
           </div>
           <Image
             className="portfolio-image"
-            layout="fill"
-            objectFit="cover"
+            fill
             src={permalink + portfolioBlockData.background_image[0]}
           />
 
@@ -200,10 +206,10 @@ const IndexPage = ({ data, content }) => {
             </div>
           </div>
 
-          {/* <div className="wrapper pagination">
-            {prevArticle}
-            {nextArticle}
-          </div> */}
+          <div className="wrapper pagination">
+            <NextArticle data={data} />
+            <PrevArticle data={data} />
+          </div>
         </section>
       </div>
     </Layout>
