@@ -41,18 +41,14 @@ port_date:
 <p>During my tenure as a full-stack developer at Bredband2, a leading telecommunications company, I had the opportunity to contribute to various critical projects that significantly impacted the organization's digital presence, security measures, and overall customer experience. In this case study, I will highlight three key initiatives that exemplify my skills, dedication, and problem-solving abilities. </p>
 
 <br />
-<h3> Project 1: ****** </h3>
-<p>Confidential.</p>
-
-<br />
-<h3>Project 2: Redesigning the Digital Identity </h3>
+<h3>Project 1: Redesigning the Digital Identity </h3>
 
 <p>One of the standout projects during my tenure at Bredband2 was the complete redesign of their website, incorporating a fresh visual identity. This venture presented unique challenges, as the external designer lacked prior experience in web design and adherence to WCAG standards. To overcome this obstacle, we hired Rebecca, a seasoned senior designer and UX expert, whose valuable insights and guidance empowered me to effectuate meaningful changes.</p>
 
 <p>Taking on the role of a full-stack developer, I collaborated closely with Rebecca, leveraging her expertise to bridge the gap between design and implementation. By effectively communicating and incorporating her recommendations, we successfully delivered a visually captivating and user-centric website that adhered to industry best practices, enhancing Bredband2's brand perception and elevating the overall user experience.</p>
 
 <br />
-<h3> Project 3: Development of "Mitt Bredband2" Customer Portal </h3>
+<h3> Project 2: Development of "Mitt Bredband2" Customer Portal </h3>
 
 <p>During my time at Bredband2, I played a crucial role in the development of "Mitt Bredband2," a customer portal that provided users with secure access to personalized account information and services. This customer portal allowed users to log in using bankID or their username and password. By providing a comprehensive self-service platform, users could view account details, manage services, and engage in real-time chats as logged-in customers.</p>
 
@@ -85,6 +81,6 @@ port_date:
 <h3>Conclusion:</h3>
 
 <p>
-My time at Bredband2 was characterized by my dedication to driving digital transformation, enhancing security measures, and improving the overall customer experience. Through successfully resolving critical security vulnerabilities, spearheading a comprehensive website redesign, and developing the "Mitt Bredband2" customer portal, I demonstrated my technical expertise, collaboration skills, and ability to deliver impactful solutions.<br /><br />
+My time at Bredband2 was characterized by my dedication to driving digital transformation, enhancing security measures, and improving the overall customer experience. Through continues development, spearheading a comprehensive website redesign, and developing the "Mitt Bredband2" customer portal, I demonstrated my technical expertise, collaboration skills, and ability to deliver impactful solutions.<br /><br />
 
 Furthermore, by actively pursuing continuous learning and acquiring certifications, I ensured that I remained at the forefront of industry trends and best practices, enabling me to contribute effectively to Bredband2's success.</p>
