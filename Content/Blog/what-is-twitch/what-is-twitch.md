@@ -1,20 +1,20 @@
 ---
-title: 'What is Twitch?'
-date: '2019-06-09'
+title: "What is Twitch?"
+date: "2019-06-09"
 status: publish
-permalink: /blog/what-is-twitch
+permalink: /notes/what-is-twitch
 author: Ehsan
-excerpt: ''
+excerpt: ""
 type: post
 id: 1364
 thumbnail: ../uploads/2019/06/Gaming.jpg
 category:
-    - Design
+  - Design
 tag:
-    - Streaming
+  - Streaming
 post_format: []
-
 ---
+
 Twitch is a prominent online streaming video.
 
 Twitch streams can be seen on the official Twitch site and through one of the numerous formal Twitch applications which are accessible for iOS and Android gadgets, Xbox, PlayStation, and countless other viewing choices. Watching streams and videos on Twitch is free and doesn’t expect watchers to sign in.

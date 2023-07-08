@@ -1,24 +1,23 @@
 ---
-title: 'My first Machine Learning project'
-date: '2019-04-12'
+title: "My first Machine Learning project"
+date: "2019-04-12"
 status: publish
-permalink: /blog/my-first-machine-learning-project
+permalink: /notes/my-first-machine-learning-project
 author: Ehsan
-excerpt: ''
+excerpt: ""
 type: post
 id: 913
 thumbnail: ../uploads/2019/04/244001-1400x900-c-center.jpg
 category:
-    - Lab
+  - Lab
 tag:
-    - AI
-    - ML
-    - Python
+  - AI
+  - ML
+  - Python
 post_format: []
-
 ---
-To understand what the script does line by line
------------------------------------------------
+
+## To understand what the script does line by line
 
 I have been reading a lot about AI and machine learning lately.
 Big company Like Google, Facebook, and Microsoft already offering ML and AI related services.I have played around with Google Vision and also seen services from Microsoft. But It was hard to start making your own Service.
@@ -63,27 +62,29 @@ I did not put any images of my test object in my training data.and the result wa
 
 ![Kate upton](./images/kate.jpg)
 Test 1 : Kate upton
+
 <pre class="graf graf--pre graf-after--pre" >
 hot (score = 0.96017)
 ugly (score = 0.00904)
 </pre>
 
-
 ![Rihanna](./images/rihanna.jpg)
 Test 2 : Rihanna
+
 <pre class="graf graf--pre graf-after--pre" >
 hot (score = 0.98910)
 </pre>
 
-
 ![Miley-cyrus](./images/Miley-cyrus.jpg)
 Test 3: Miley Cyrus
+
 <pre class="graf graf--pre graf-after--pre" >
 hot (score = 0.72287)
 ugly (score = 0.01855)
 </pre>
 
 ![Miley-cyrus](./images/Hillary_Clinton.jpg)
+
 <pre class="graf graf--pre graf-after--pre" >
 Test 4 : Hillary Clinton
 hot (score = 0.40589)
@@ -91,6 +92,7 @@ ugly (score = 0.34242)
 </pre>
 
 ![Miley-cyrus](./images/IMG_1856-kopia.jpg)
+
 <pre class="graf graf--pre graf-after--pre">
 Test 5: My own face
 hot (score = 0.52569)
@@ -108,4 +110,4 @@ I also really would like to get started with the project that could turn the Wir
 
 Finally I want to tell to those who try to learn to code, that you can learn anything! This is 2017 and there is a lot of people that share codes, just copy the code, test it, change some line and see what happens! If I cloud learn to code my self you can do it too! you only need patience!
 
-*This is my first article ever!!! So sorry for my bad english but i need to write to learn!*
+_This is my first article ever!!! So sorry for my bad english but i need to write to learn!_

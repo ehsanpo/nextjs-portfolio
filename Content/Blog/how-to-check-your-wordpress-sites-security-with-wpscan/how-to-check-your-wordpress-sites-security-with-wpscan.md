@@ -1,21 +1,21 @@
 ---
-title: 'How to check your wordpress sites security with WPScan'
-date: '2020-01-09'
+title: "How to check your wordpress sites security with WPScan"
+date: "2020-01-09"
 status: publish
-permalink: /blog/how-to-check-your-wordpress-sites-security-with-wpscan
+permalink: /notes/how-to-check-your-wordpress-sites-security-with-wpscan
 author: Ehsan
-excerpt: ''
+excerpt: ""
 type: post
 id: 1373
 thumbnail: ../uploads/2020/01/article.psd.jpg
 category:
-    - Lab
+  - Lab
 tag:
-    - security
-    - Wordpress
+  - security
+  - Wordpress
 post_format: []
-
 ---
+
 WPScan is a black box WordPress vulnerability scanner that can be used to scan remote WordPress installations to find security issues.You can use it to find vulnerability and brute forcing.
 
 Download WPScanfrom github:  
@@ -26,7 +26,7 @@ https://github.com/wpscanteam/wpscan/
 Start with the following command to update the WPScan vulnerabilities database:
 
 ```
-wpscan –update 
+wpscan –update
 ```
 
 ### Scanning WordPress vulnerabilities
@@ -34,7 +34,7 @@ wpscan –update
 After updating the vulnerability database use the following command to scan the target website for the most popular and recent vulnerabilities:
 
 ```
-wpscan –url [wordpress url] 
+wpscan –url [wordpress url]
 ```
 
 You will get the WordPress version, used theme and vulnerabilities in red if WPScan can finds any.
@@ -56,7 +56,7 @@ There are many different tools out there for brute forcing like hydra here is ho
 Use the following command to brute force the password for user root:
 
 ```
- wpscan –url [wordpress url]–wordlist [path to wordlist]–username [username to brute force]–threads [number of threads to use] 
+ wpscan –url [wordpress url]–wordlist [path to wordlist]–username [username to brute force]–threads [number of threads to use]
 ```
 
 ### using Tor with wpscan to avoid getting your ip banned

@@ -2,20 +2,20 @@
 title: "Generative Waves"
 date: "2022-06-12"
 status: publish
-permalink: /blog/generatrive-waves
+permalink: /notes/generative-wave
 author: Ehsan
 excerpt: ""
 type: post
 id: 1004
 thumbnail:
 category:
-    - Lab
+  - Lab
 tag:
-    - Osx
-    - "Generative Art"
+  - Osx
+  - "Generative Art"
 post_format: []
 side_image:
-    - ""
+  - ""
 ---
 
 Drawing some wawes with [Wavepaper](https://github.com/DeanIsMe/Wavepaper_Release).

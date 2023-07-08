@@ -17,6 +17,7 @@
     "fs-extra": "^10.1.0",
     "gray-matter": "^4.0.3",
     "hover-effect": "^1.1.0",
+    "html-react-parser": "^4.0.0",
     "markdown-it": "^13.0.1",
     "next": "13.0.3",
     "prop-types": "^15.8.1",
@@ -26,7 +27,9 @@
     "react-inview-monitor": "^2.3.0",
     "react-lazy-media": "^0.3.1",
     "react-markdown": "^8.0.7",
-    "react-spotify-player": "^1.0.4"
+    "react-spotify-player": "^1.0.4",
+    "react-string-replace": "^1.1.1",
+    "remark-iframes": "^4.0.5"
   },
   "devDependencies": {
     "gh-pages": "^4.0.0",

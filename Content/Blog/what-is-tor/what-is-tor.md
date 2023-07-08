@@ -1,22 +1,22 @@
 ---
-title: 'What is Tor?'
-date: '2019-04-15'
+title: "What is Tor?"
+date: "2019-04-15"
 status: publish
-permalink: /blog/what-is-tor
+permalink: /notes/what-is-tor
 author: Ehsan
-excerpt: ''
+excerpt: ""
 type: post
 id: 1004
 thumbnail: ../uploads/2019/06/firefox-tor.jpg
 category:
-    - Lab
+  - Lab
 tag:
-    - Bash
-    - Osx
-    - Tor
+  - Bash
+  - Osx
+  - Tor
 post_format: []
-
 ---
+
 Have you at any point needed to use the Internet secretly? Browser’s with “incognito” or “private window” don’t accurately cut it. On the off chance that you need absolute anonymity, you’re going to need to utilize Tor, in the past known as The Onion Router.
 
 ### Tor is an Internet networking protocol

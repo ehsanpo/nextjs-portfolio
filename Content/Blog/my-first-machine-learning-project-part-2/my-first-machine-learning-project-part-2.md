@@ -1,23 +1,22 @@
 ---
-title: 'My first Machine Learning project PART 2'
-date: '2019-04-15T12:37:11+00:00'
+title: "My first Machine Learning project PART 2"
+date: "2019-04-15T12:37:11+00:00"
 status: publish
-permalink: /blog/my-first-machine-learning-project-part-2
+permalink: /notes/my-first-machine-learning-project-part-2
 author: Ehsan
-excerpt: ''
+excerpt: ""
 type: post
 id: 992
 thumbnail: ../uploads/2019/04/176540-1400x900-c-center.jpg
 category:
-    - Lab
+  - Lab
 tag:
-    - Pyhton
-    - TensorFlow
+  - Pyhton
+  - TensorFlow
 post_format: []
-
 ---
-I trained my AI with a little bit more data!
---------------------------------------------
+
+## I trained my AI with a little bit more data!
 
 I have trained my AI with a bit more data and categories.Now you get a little bit more information.
 

@@ -1,20 +1,20 @@
 ---
-title: 'Getting started with React Native'
-date: '2020-01-14'
+title: "Getting started with React Native"
+date: "2020-01-14"
 status: publish
-permalink: /blog/getting-started-with-react-native
+permalink: /notes/getting-started-with-react-native
 author: Ehsan
-excerpt: ''
+excerpt: ""
 type: post
 id: 1431
 thumbnail: ../uploads/2020/01/IMG_1807.jpg
 category:
-    - Lab
-    - Mobile
+  - Lab
+  - Mobile
 tag: []
 post_format: []
-
 ---
+
 I have been working with React in past years and know my way around it, I have heard about react-native but never had any client or idea to build something with it until I saw a Reddit post about pigpen cipher. As soon as I saw the post I got an idea to turn it to an app so I can send a semi-encrypted massage to anyone.
 
 ![](../uploads/2020/01/wsi-imageoptim-Pigpen_cipher_key.svg.png)
@@ -32,7 +32,7 @@ With expos basic tab example, I already had a working app with tabs. The idea wa
 After a couple of hours, I was done and could see my app in the browser by running:
 
 ```
-expo start --web 
+expo start --web
 ```
 
 Everything worked great and I saved all my cipher as svg it into the app. but when I started looking at the app in native ios environment I could see that my svg is not showing up. after googling for hours and trying different libraries I got back to the original react-native-svg and converted my svg to Svg react component. but still no luck! after looking around and playing with the code for about one hour I found the problem. I forgot to set the width &amp; height for each svg.

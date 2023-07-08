@@ -1,14 +1,13 @@
 import React from "react";
 //import { Link } from "gatsby"
-import Layout from "../components/layout";
-import SeO from "../components/seo";
-import Parallax from "../components/ParallaxImage";
-import PostBlock from "../components/PostBlock";
+import Layout from "../../components/layout";
+import SeO from "../../components/seo";
+import Parallax from "../../components/ParallaxImage";
+import PostBlock from "../../components/PostBlock";
 import fs from "fs";
 import matter from "gray-matter";
 
 const Portfolio = ({ data }) => (
-
   <Layout>
     <SeO title="Developer Portfolio" />
     <Parallax filename="x2.jpg" />
@@ -41,7 +40,7 @@ const Portfolio = ({ data }) => (
         </div>
       </div>
     </section>
-   <PostBlock data={data} /> 
+    <PostBlock data={data} />
   </Layout>
 );
 export default Portfolio;
@@ -61,7 +60,8 @@ export async function getStaticProps() {
       data: frontmatter,
     };
   });
-  const sortedpost =  posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date))
+  const sortedpost = posts.sort(
+    (a, b) => new Date(b.data.date) - new Date(a.data.date)
+  );
   return { props: { data: sortedpost } };
-
 }
