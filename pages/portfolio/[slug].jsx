@@ -41,6 +41,7 @@ export async function getStaticProps({ params: { slug } }) {
   );
 
   const { data: post, content } = matter(currentPost);
+  post.fileName = slug;
   const { data: prevPost } = matter(prevPostFile);
   const { data: nextPost } = matter(nextPostFile);
 

@@ -5,7 +5,6 @@ import Image from "next/image";
 import reactStringReplace from "react-string-replace";
 
 const Post = ({ data, content }) => {
-  console.log(data);
   const imgLink = data.post.permalink.replace("/notes/", "/images/");
   const regex = /(!\[(.*?)\]\((.*?)\))/g;
   let cleanContent = reactStringReplace(content, regex, (match, i) => {

@@ -37,7 +37,6 @@ export async function getAllPostsWithFrontMatter(dataType, filterByTag = null) {
     );
 
     const { data } = matter(source);
-    // console.log(data);
 
     if (filterByTag) {
       if (data.tags.includes(filterByTag)) {
@@ -76,8 +75,6 @@ export default function BlogTag({ posts, title, description, tag }) {
 
 export async function getStaticProps({ params }) {
   const posts = await getAllPostsWithFrontMatter("blog", params.tag);
-  console.log(posts.length);
-  console.log(params);
 
   return {
     props: {
@@ -89,7 +86,6 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const tags = await getTags("blog");
-  console.log(tags);
 
   const paths = tags.map((tag) => ({
     params: {

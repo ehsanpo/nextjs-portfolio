@@ -2,7 +2,6 @@ import fs from "fs";
 import matter from "gray-matter";
 import Template from "../../components/template/blog.js";
 
-
 export async function getStaticPaths() {
   const files = fs.readdirSync("Content/blog");
   const paths = files.map((fileName) => ({
@@ -16,14 +15,10 @@ export async function getStaticPaths() {
   };
 }
 
-
 export async function getStaticProps({ params: { slug } }) {
   const fileName = fs.readFileSync(`Content/blog/${slug}/${slug}.md`, "utf-8");
   const { data: data, content } = matter(fileName);
-
-
-
-
+  data.fileName = slug;
 
   return {
     props: {

@@ -55,3 +55,4 @@ async function createPostImageFoldersForCopy(postsDir) {
 await fsExtra.emptyDir(targetDir);
 await createPostImageFoldersForCopy("./Content/portfolio");
 await createPostImageFoldersForCopy("./Content/blog");
+console.log("Done! XXX");
