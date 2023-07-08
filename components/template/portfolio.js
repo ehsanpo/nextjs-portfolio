@@ -33,7 +33,8 @@ const PrevArticle = ({ data }) => {
 
 const IndexPage = ({ data, content }) => {
   const portfolioBlockData = data.post;
-  const permalink = "/images/" + data.post.permalink + "/";
+  console.log(data, "data");
+  const permalink = "/images/" + data.post.fileName + "/";
   const portfolioBlockBody = content;
   const [headerClose, setHeaderClose] = useState("");
 
@@ -57,47 +58,52 @@ const IndexPage = ({ data, content }) => {
         >
           <div className={`portfolio-header-top`}>
             <div className="wrapper">
-              <h1 className="portfolio-header-title display invert">
+              {/* <h1 className="portfolio-header-title display invert">
                 {portfolioBlockData.client}
-              </h1>
+              </h1> */}
             </div>
           </div>
+
           <div className="portfolio-header-mid v-center">
-            <div className="portfolio-topImage">
-              {portfolioBlockData.logo && (
+            {/* {portfolioBlockData.logo && (
                 <Image
                   className="portfolio-image"
                   width={350}
                   height={216}
                   src={permalink + portfolioBlockData.logo[0]}
                 />
-              )}
-            </div>
-            <h2 className="display">{portfolioBlockData.title}</h2>
-            <h3>{portfolioBlockData.tagline}</h3>
-            <div className="links">
-              {portfolioBlockData.case_link_url && (
-                <Button
-                  className="btn--3"
-                  type="link"
-                  to={portfolioBlockData.case_link_url[0]}
-                >
-                  Visit Site
-                </Button>
-              )}
+              )} */}
+
+            <div className="wrapper">
+              <div>
+                <h2 className="display">{portfolioBlockData.title}</h2> <br />
+                {portfolioBlockData.tagline && (
+                  <h3>{portfolioBlockData.tagline}</h3>
+                )}
+                <div className="links">
+                  {portfolioBlockData.case_link_url && (
+                    <Button
+                      className="btn--3"
+                      type="link"
+                      to={portfolioBlockData.case_link_url[0]}
+                    >
+                      Visit Site
+                    </Button>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
           <Image
             className="portfolio-image"
             fill
+            objectFit="cover"
             src={permalink + portfolioBlockData.background_image[0]}
           />
 
           <div className="portfolio-header-bot">
             <div className="wrapper">
-              <div className="portfolio-header-date">
-                <h3>{portfolioBlockData.port_date}</h3>
-              </div>
+              <div className="portfolio-header-date"></div>
             </div>
           </div>
         </div>

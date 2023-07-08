@@ -36,7 +36,7 @@ const Box = ({ node, image, children, headline = "", empty = false }) => {
           {logo && (
             <div className={style.portfolioImageThumb}>
               <Image
-                src={"/images/portfolio/" + fileName + "/" + logo[0]}
+                src={"/images/" + fileName + "/" + logo[0]}
                 width={250}
                 height={170}
                 loading="lazy"

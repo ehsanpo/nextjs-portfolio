@@ -138,6 +138,7 @@ p {
 .display {
   font-size: 48px;
   line-height: 1;
+
   @include bp-medium {
     font-size: 64px;
   }

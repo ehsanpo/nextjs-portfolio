@@ -5,9 +5,9 @@ import styles from "./Award.module.scss";
 import InViewMonitor from "react-inview-monitor";
 import Button from "../Button";
 import Image from "next/image";
-import image1 from "../../public/cannen-b.png";
-import image2 from "../../public/svenskadesign-b.png";
-import image3 from "../../public/guldagg-b.png";
+import image1 from "../../public/img/cannen-b.png";
+import image2 from "../../public/img/svenskadesign-b.png";
+import image3 from "../../public/img/guldagg-b.png";
 
 const Award = () => {
   return (

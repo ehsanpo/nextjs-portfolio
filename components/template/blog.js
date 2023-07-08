@@ -3,8 +3,10 @@ import Layout from "../layout";
 import Seo from "../seo";
 import Image from "next/image";
 import md from "markdown-it";
+import ReactMarkdown from "react-markdown";
 
 const Post = ({ data, content }) => {
+  console.log(content);
   return (
     <Layout>
       <Seo title={data.title} />
@@ -13,14 +15,26 @@ const Post = ({ data, content }) => {
           <h1 className="display">{data.title}</h1>
         </div>
       </div>
-      {htmlContent}
+
       <section>
         <div className="wrapper">
           <div className="wrapper-m">
             <div className="blogContent">
-              <div
-                dangerouslySetInnerHTML={{ __html: md().render(content) }}
-              ></div>
+              <ReactMarkdown
+                components={{
+                  img: (props) => (
+                    <Image
+                      src={props.src}
+                      alt={props.alt}
+                      width={1200}
+                      height={200}
+                    />
+                  ),
+                }}
+              >
+                {content}
+              </ReactMarkdown>
+              {/* <div dangerouslySetInnerHTML={{ __html: content }}></div> */}
             </div>
           </div>
         </div>
