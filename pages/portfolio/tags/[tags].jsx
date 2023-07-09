@@ -17,6 +17,7 @@ async function collateTags(dataType) {
       "utf8"
     );
     const { data } = matter(source);
+    data.fileName = postSlug;
     data.tag.forEach((tag) => allTags.add(tag));
   });
 
@@ -39,7 +40,7 @@ export async function getAllPostsWithFrontMatter(dataType, filterByTag = null) {
     );
 
     const { data } = matter(source);
-
+    data.fileName = postSlug;
     if (filterByTag) {
       if (data.tag.includes(filterByTag)) {
         return [
