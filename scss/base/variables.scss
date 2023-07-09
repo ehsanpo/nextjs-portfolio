@@ -2,35 +2,16 @@
  ========================================================================== */
 
 //Primary colours
-
-$c1: #2e3443;
-$c2: #fe3048;
-$c3: #7d112f;
-$c4: #8c8f98;
-$c5: #b0f000;
-$c6: #2b303b;
-
-:root {
-	--yellow-color: #fcee09;
-	--red-color: #ff003c;
-	--black-color: #050a0e;
-	--blue-color: #00f0ff;
-	--white-color: #fafafa;
-}
-
-
 html {
+  --offwhite: #fafafa;
   --p1: #2d3342;
   --p2: #565c6d;
   --p3: #040c1b;
-  --c1: #ff0066;
-  --c2: #800033;
-  --c3: #40001a;
   --c4: #e6005c;
   --c5: #c5003c;
-  --green: #41bf50;
+  --tail: #41bf50;
   --green2: #8bcc3b;
-  --yellow2: #fef900;
+  --purple: #440087;
   --yellow: #ffe009;
   --orange: #f59740;
   --lighblue: #69f8ff;
@@ -38,9 +19,8 @@ html {
   --blue: #0040b0;
   --darkblue: #1f0f57;
   --gx: linear-gradient(220deg, var(--p3), var(--c5));
-  --g1: linear-gradient(220deg, var(--darkblue), var(--c5));
   --g2: linear-gradient(220deg, var(--orange), var(--c5));
-  --g3: linear-gradient(220deg, var(--c1), var(--yellow));
+  --g3: linear-gradient(220deg, var(--c4), var(--yellow));
   --g4: linear-gradient(220deg, var(--p1), var(--p3));
   --g5: linear-gradient(90deg, var(--c5), var(--orange));
   --block-h: 30vh;

@@ -22,7 +22,7 @@ const Index = ({ data, onHome = false }) => {
       <div className="wrapper">
         {data.map((Onode) => {
           const node = Onode.data;
-          return <Box key={node.id} node={node} />;
+          return <Box key={node.title} node={node} />;
         })}
       </div>
       {onHome && (

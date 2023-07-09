@@ -33,7 +33,6 @@ const PrevArticle = ({ data }) => {
 
 const IndexPage = ({ data, content }) => {
   const portfolioBlockData = data.post;
-  console.log(data, "data");
   const permalink = "/images/" + data.post.fileName + "/";
   const portfolioBlockBody = content;
   const [headerClose, setHeaderClose] = useState("");
@@ -161,7 +160,9 @@ const IndexPage = ({ data, content }) => {
                 >
                   <div className="tags">
                     {portfolioBlockData.tag.map((tag) => (
-                      <span key={tag}>{tag} </span>
+                      <Link href={`/portfolio/tags/${tag}`}>
+                        <span key={tag}>{tag} </span>
+                      </Link>
                     ))}
                   </div>
                 </Box>

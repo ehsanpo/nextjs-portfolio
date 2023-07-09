@@ -4,6 +4,8 @@
 import React from "react";
 import fs from "fs";
 import matter from "gray-matter";
+import Template from "../../../components/template/blog.js";
+import PostBlock from "../../../components/PostBlock";
 
 async function collateTags(dataType) {
   const files = fs.readdirSync("Content/Portfolio");
@@ -39,10 +41,10 @@ export async function getAllPostsWithFrontMatter(dataType, filterByTag = null) {
     const { data } = matter(source);
 
     if (filterByTag) {
-      if (data.tags.includes(filterByTag)) {
+      if (data.tag.includes(filterByTag)) {
         return [
           {
-            frontMatter: data,
+            data: data,
             slug: postSlug.replace(".md", ""),
           },
           ...allPosts,
@@ -54,7 +56,7 @@ export async function getAllPostsWithFrontMatter(dataType, filterByTag = null) {
 
     return [
       {
-        frontMatter: data,
+        data: data,
         slug: postSlug.replace(".md", ""),
       },
       ...allPosts,
@@ -64,17 +66,23 @@ export async function getAllPostsWithFrontMatter(dataType, filterByTag = null) {
 
 export default function BlogTag({ posts, title, description, tag }) {
   return (
-    <div className="mb-6">
-      <section>
-        <h3>✍🏼 Blog posts tagged "{tag}"</h3>
-        {/* <BlogPosts posts={posts} /> */}
-      </section>
-    </div>
+    <section>
+      <div className="wrapper">
+        <h3>
+          {posts.length} posts tagged "{tag}"
+        </h3>
+
+        {/* <Template data={{ data: { posts: posts } }} /> */}
+      </div>
+      <div className="wrapper">
+        <PostBlock data={posts} />
+      </div>
+    </section>
   );
 }
 
 export async function getStaticProps({ params }) {
-  const posts = await getAllPostsWithFrontMatter("blog", params.tag);
+  const posts = await getAllPostsWithFrontMatter("blog", params.tags);
 
   return {
     props: {
