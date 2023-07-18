@@ -49,36 +49,36 @@
   }
   &.btn--secondary .btn__content {
     background-color: var(--yellow);
-    color: var(--black-color);
+    color: var(--black);
   }
   &.btn--secondary .btn__label {
     background-color: var(--offwhite);
-    color: var(--black-color);
+    color: var(--black);
   }
   &.btn--secondary .btn__glitch {
     background-color: var(--yellow);
   }
   &.btn--3 .btn__content {
     background-color: var(--lighblue);
-    color: var(--black-color);
+    color: var(--black);
   }
   &.btn--3 .btn__label {
     background-color: var(--offwhite);
-    color: var(--black-color);
+    color: var(--black);
   }
   &.btn--3 .btn__glitch {
     background-color: var(--lighblue);
   }
   &.btn--b .btn__content {
-    background-color: var(--black-color);
+    background-color: var(--black);
     color: var(--yellow);
   }
   &.btn--b .btn__label {
     background-color: var(--offwhite);
-    color: var(--black-color);
+    color: var(--black);
   }
   &.btn--b .btn__glitch {
-    background-color: var(--black-color);
+    background-color: var(--black);
   }
 }
 .btn__content:hover {

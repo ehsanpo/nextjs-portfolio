@@ -41,8 +41,9 @@
     width: 100%;
     height: 100%;
     background: var(--boxColor);
-    filter: drop-shadow(-2px 3px #67e3f3) drop-shadow(-1px -3px #02d8f3)
-      drop-shadow(2px 1px #02d8f3);
+    filter: drop-shadow(-2px 3px var(--lighblue))
+      drop-shadow(-1px -3px var(--lighblue))
+      drop-shadow(2px 1px var(--lighblue));
   }
   .boxHeader {
     font-size: 16px;

@@ -1,6 +1,5 @@
 .Awards {
   text-align: center;
-  color: #fff;
   clip-path: polygon(
     -1px 15px,
     0px 15px,
@@ -38,7 +37,8 @@
     -1px calc(100% - 30px)
   );
   background: var(--yellow);
-  color: #000;
+  // color: #000;
+  color: var(--black);
   padding: 48px 24px;
 }
 .awdContent {
@@ -63,15 +63,28 @@
   background: linear-gradient(-45deg, var(--yellow) 0%, var(--blue) 100%);
   filter: blur(20px);
   opacity: 0;
+  animation: scale 2s ease-in-out infinite;
 }
 
 .awardsContainer:hover:before {
-  background: linear-gradient(-45deg, #ffe32c 0%, #52acff 100%);
+  background: linear-gradient(-45deg, var(--yellow) 0%, var(--lighblue) 100%);
   transform: translate3d(0px, 20px, 0) scale(0.95);
 
   opacity: 1;
   transition: opacity 0.3s;
   border-radius: inherit;
+}
+
+@keyframes scale {
+  0% {
+    transform: translatey(0px) scale(1) rotate(0);
+  }
+  50% {
+    transform: translatey(-10px) scale(0.8) rotate(8deg);
+  }
+  100% {
+    transform: translatey(0px) scale(1) rotate(0);
+  }
 }
 
 /*

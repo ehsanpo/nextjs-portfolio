@@ -3,21 +3,21 @@
 
 //Primary colours
 html {
-  --offwhite: #fafafa;
-  --p1: #2d3342;
-  --p2: #565c6d;
-  --p3: #040c1b;
-  --c4: #e6005c;
-  --c5: #c5003c;
-  --tail: #41bf50;
-  --green2: #8bcc3b;
-  --purple: #440087;
-  --yellow: #ffe009;
-  --orange: #f59740;
-  --lighblue: #69f8ff;
-  --black-color: #050a0e;
-  --blue: #0040b0;
-  --darkblue: #1f0f57;
+  --offwhite: #fafafa; // 50
+  --p1: #2d3342; // 900  UI
+  --p2: #565c6d; // 600 disable state
+  --p3: #040c1b; // 950
+  --c4: #e6005c; // 700 mayeb upgrade to #ff2c73
+  --c5: #c5003c; // 700 up #ff2c5f
+  --tail: #41bf50; // 500
+  --green2: #8bcc3b; // 400
+  --purple: #9d3fff; // 950
+  --yellow: #efc803; // 500
+  --orange: #f27a1d; // 500
+  --lighblue: #1ae8f6; // 400
+  --black: #050a0e; // 950  ui #387394
+  --blue: #0040b0; // 900
+  --darkblue: #1f0f57; // 950
   --gx: linear-gradient(220deg, var(--p3), var(--c5));
   --g2: linear-gradient(220deg, var(--orange), var(--c5));
   --g3: linear-gradient(220deg, var(--c4), var(--yellow));
