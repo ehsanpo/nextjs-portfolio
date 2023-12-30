@@ -1,14 +1,16 @@
+import React from "react";
 import fs from "fs";
 import matter from "gray-matter";
-import Template from "../../components/template/portfolio.js";
+import Template from "@/components/template/portfolio.js";
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync("Content/Portfolio");
+  const files = fs.readdirSync("content/Portfolio");
   const paths = files.map((fileName) => ({
     params: {
       slug: fileName.replace(".md", ""),
     },
   }));
+
   return {
     paths,
     fallback: false,
@@ -17,16 +19,37 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }) {
   const fileName = fs.readFileSync(
-    `Content/portfolio/${slug}/${slug}.md`,
-    "utf-8"
+    `content/Portfolio/${slug}/${slug}.md`,
+    "utf-8",
+  );
+  const files = fs.readdirSync("content/Portfolio");
+  // find the index of the current slug in files
+  const index = files.findIndex((file) => file.replace(".md", "") === slug);
+
+  // get the next and previous slugs
+  const next = files[index + 1] || files[0];
+  const nextPostFile = fs.readFileSync(
+    `content/Portfolio/${next}/${next}.md`,
+    "utf-8",
+  );
+  const prev = files[index - 1] || files[files.length - 1];
+  const prevPostFile = fs.readFileSync(
+    `content/Portfolio/${prev}/${prev}.md`,
+    "utf-8",
+  );
+  const currentPost = fs.readFileSync(
+    `content/Portfolio/${slug}/${slug}.md`,
+    "utf-8",
   );
 
-  const ehsan = matter(fileName);
-  const { data: data, content } = matter(fileName);
+  const { data: post, content } = matter(currentPost);
+  post.fileName = slug;
+  const { data: prevPost } = matter(prevPostFile);
+  const { data: nextPost } = matter(nextPostFile);
 
   return {
     props: {
-      data,
+      data: { post, prevPost, nextPost },
       content,
     },
   };

@@ -2,7 +2,6 @@ import * as React from "react";
 import Loadable from "@loadable/component";
 import Layout from "../components/layout";
 import SeO from "../components/seo";
-import InViewMonitor from "react-inview-monitor";
 import Award from "../components/Award";
 import Button from "../components/Button";
 import dynamic from "next/dynamic";
@@ -13,7 +12,7 @@ const Imagehover = dynamic(() => import("../components/Imagehover"), {
 
 const NotFoundPage = () => {
   return (
-    <Layout>
+    <>
       <SeO title="About Ehsan Pourhadi" />
       <div className="page-header ">
         <div className="wrapper">
@@ -212,14 +211,14 @@ const NotFoundPage = () => {
       </section>
 
       {/* <section className="image-text-block-boxed no-bg add_padding">
-        <InViewMonitor
+        <Fade
           intoViewMargin="6%"
           classNameNotInView="vis-hidden"
           classNameInView="animated titleIn"
           toggleClassNameOnInView
         >
           <h2 className="title red">My Resume</h2>
-        </InViewMonitor>
+        </Fade>
         <div className="wrapper-m">
           <div className=" center">
             <Button
@@ -248,7 +247,7 @@ const NotFoundPage = () => {
         </div>
       </section> */}
       <Award />
-    </Layout>
+    </>
   );
 };
 

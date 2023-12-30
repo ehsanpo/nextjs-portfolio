@@ -8,7 +8,7 @@ import Box from "../Box/EmptyBox";
 import NextImage from "next/image";
 
 const IndexPage = ({ data, content }) => {
-  const portfolioBlockData = data;
+  const portfolioBlockData = data.post;
   const permalink = "/images/" + data.permalink + "/";
   const portfolioBlockBody = content;
   const [headerClose, setHeaderClose] = useState("");
@@ -36,7 +36,7 @@ const IndexPage = ({ data, content }) => {
   }, []);
 
   return (
-    <Layout>
+    <>
       <Seo title={portfolioBlockData.title} />
       <div className="portfolio-page page">
         <div
@@ -203,7 +203,7 @@ const IndexPage = ({ data, content }) => {
           </div> */}
         </section>
       </div>
-    </Layout>
+    </>
   );
 };
 

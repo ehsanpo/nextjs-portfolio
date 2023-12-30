@@ -2,13 +2,13 @@ import React from "react";
 import Layout from "../components/layout";
 import SeO from "../components/seo";
 import SpotifyPlayer from "react-spotify-player";
-import InViewMonitor from "react-inview-monitor";
+import Fade from "@/ulti/animation";
 // import { LazyIframe } from "react-lazy-media";
 
 const NotFoundPage = () => {
   const size = {
     width: "100%",
-    height: 300,
+    height: 152,
   };
   const sizeSingel = {
     width: "100%",
@@ -16,7 +16,7 @@ const NotFoundPage = () => {
   };
 
   return (
-    <Layout>
+    <>
       <SeO title="Music Producent" />
       <div className="page-header ">
         <div className="wrapper">
@@ -45,14 +45,9 @@ const NotFoundPage = () => {
         </div>
       </section>
       <section className="no-bg">
-        <InViewMonitor
-          intoViewMargin="6%"
-          classNameNotInView="vis-hidden"
-          classNameInView="animated titleIn"
-          toggleClassNameOnInView
-        >
+        <Fade>
           <h2 className="title red">Albums</h2>
-        </InViewMonitor>
+        </Fade>
         <div className="wrapper">
           <div>
             <h3>2020 - 2020</h3>
@@ -116,14 +111,14 @@ const NotFoundPage = () => {
         </div>
       </section>
       <section>
-        <InViewMonitor
+        <Fade
           intoViewMargin="6%"
           classNameNotInView="vis-hidden"
           classNameInView="animated titleIn"
           toggleClassNameOnInView
         >
           <h2 className="title red">Singels & EP</h2>
-        </InViewMonitor>
+        </Fade>
         <div className="wrapper">
           <div>
             <h3>Noor - 2022</h3>
@@ -237,7 +232,7 @@ const NotFoundPage = () => {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 };
 

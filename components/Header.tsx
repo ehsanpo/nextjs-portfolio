@@ -1,7 +1,22 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-const Header = ({ siteTitle }) => {
+type ValidPath = `/${string}`; // Type for valid paths starting with slash
+
+interface MenuItem {
+  [key: string]: ValidPath;
+}
+
+const menu: MenuItem = {
+  Home: "/",
+  About: "/about",
+  Notes: "/notes",
+  Portfolio: "/portfolio",
+  Skills: "/skills",
+  Music: "/music",
+};
+
+const Header = () => {
   const [headerButton, setHeaderButton] = useState(false);
   return (
     <header
@@ -36,32 +51,13 @@ const Header = ({ siteTitle }) => {
       >
         <nav className={`${headerButton ? "open" : ""}`}>
           <ol>
-            <li>
-              <Link className="btn--link" href="/">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link legacyBehavior className="btn--link" href="/portfolio">
-                <a className="btn--link">Portfolio</a>
-              </Link>
-            </li>
-            <li>
-              <Link legacyBehavior href="/music">
-                <a className="btn--link">Music</a>
-              </Link>
-            </li>
-
-            <li>
-              <Link legacyBehavior href="/skills">
-                <a className="btn--link">Skills</a>
-              </Link>
-            </li>
-            <li>
-              <Link legacyBehavior href="/about">
-                <a className="btn--link">About</a>
-              </Link>
-            </li>
+            {Object.keys(menu).map((key) => (
+              <li key={key}>
+                <Link className="btn--link" href={menu[key]}>
+                  {key}
+                </Link>
+              </li>
+            ))}
           </ol>
         </nav>
       </div>

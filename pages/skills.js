@@ -10,7 +10,7 @@ import Button from "../components/Button";
 import Stack from "../components/Stack";
 import Image from "next/image";
 import ImageAndText from "../components/ImageAndText";
-import InViewMonitor from "react-inview-monitor";
+import Fade from "@/ulti/animation";
 
 const color_pattern = {
   Overall: "rgba(105, 248, 255, 0.8)",
@@ -119,7 +119,7 @@ const Skills = () => {
   };
 
   return (
-    <Layout>
+    <>
       <SeO title="Skills" />
       <div className="page-header">
         <div className="wrapper">
@@ -152,32 +152,32 @@ const Skills = () => {
       </section>
 
       <section className="no-bg">
-        <InViewMonitor
+        <Fade
           intoViewMargin="6%"
           classNameNotInView="vis-hidden"
           classNameInView="animated titleIn"
           toggleClassNameOnInView
         >
           <h2 className="title red">Developer Stacks</h2>
-        </InViewMonitor>
+        </Fade>
         <div className="wrapper">
           <Stack />
         </div>
       </section>
 
       <section className="bg-color-1 cert-wrap">
-        <InViewMonitor
+        <Fade
           intoViewMargin="6%"
           classNameNotInView="vis-hidden"
           classNameInView="animated titleIn"
           toggleClassNameOnInView
         >
           <h2 className="title red">Certifications</h2>
-        </InViewMonitor>
+        </Fade>
         <div className="wrapper">
           {cert_data.map((cert) => {
             return (
-              <div>
+              <div key={cert.name}>
                 <img src={`/images/cert/${cert.img}`}></img>
                 <h4>{cert.name}</h4>
               </div>
@@ -247,14 +247,14 @@ const Skills = () => {
       </section>
 
       <section className="links-block">
-        <InViewMonitor
+        <Fade
           intoViewMargin="6%"
           classNameNotInView="vis-hidden"
           classNameInView="animated titleIn"
           toggleClassNameOnInView
         >
           <h2 className="title red">Stats</h2>
-        </InViewMonitor>
+        </Fade>
         <div className="wrapper">
           <div className="link">
             <div className="content">
@@ -330,7 +330,7 @@ const Skills = () => {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 };
 export default Skills;

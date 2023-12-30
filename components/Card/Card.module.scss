@@ -1,0 +1,29 @@
+.card {
+  clip-path: polygon(
+    0 0,
+    25% 0,
+    calc(25% + 9px) 9px,
+    calc(75% - 9px) 9px,
+    75% 0,
+    100% 0,
+    100% 100%,
+    60% 100%,
+    calc(60% - 8px) calc(100% - 8px),
+    calc(40% + 8px) calc(100% - 8px),
+    40% 100%,
+    0 100%
+  );
+  border-width: 1px;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--boxColor);
+}
+.cardBody {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 0.5rem;
+}

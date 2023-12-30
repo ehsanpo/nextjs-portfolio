@@ -28,7 +28,9 @@ const Box = ({ node, image, children, headline = "", empty = false }) => {
         <div className={style.boxHeader}>
           <span>{id}</span>{" "}
           {category.map((cat) => (
-            <>{onlyCapitalLetters(cat)} </>
+            <React.Fragment key={cat}>
+              {onlyCapitalLetters(cat)}{" "}
+            </React.Fragment>
           ))}
         </div>
         <hr />

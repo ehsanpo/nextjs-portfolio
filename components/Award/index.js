@@ -1,8 +1,7 @@
 import React from "react";
 import Link from "next/link";
-
 import styles from "./Award.module.scss";
-import InViewMonitor from "react-inview-monitor";
+import Fade from "@/ulti/animation";
 import Button from "../Button";
 import Image from "next/image";
 import image1 from "../../public/cannen-b.png";
@@ -12,18 +11,18 @@ import image3 from "../../public/guldagg-b.png";
 const Award = () => {
   return (
     <section>
-      <InViewMonitor
+      <Fade
         intoViewMargin="8%"
         classNameNotInView="vis-hidden"
         classNameInView="animated titleIn"
         toggleClassNameOnInView
       >
         <h2 className="title yellow">Awards</h2>
-      </InViewMonitor>
+      </Fade>
       <div className="wrapper">
         <div className={styles.awardsContainer}>
           <div className={styles.Awards}>
-            <InViewMonitor
+            <Fade
               intoViewMargin="10%"
               classNameNotInView="vis-hidden"
               classNameInView="animated titleIn"
@@ -41,12 +40,12 @@ const Award = () => {
               >
                 View project
               </Button>
-            </InViewMonitor>
+            </Fade>
           </div>
         </div>
         <div className={styles.awardsContainer}>
           <div className={styles.Awards}>
-            <InViewMonitor
+            <Fade
               intoViewMargin="10%"
               classNameNotInView="vis-hidden"
               classNameInView="animated titleIn"
@@ -64,12 +63,12 @@ const Award = () => {
               >
                 View project
               </Button>
-            </InViewMonitor>
+            </Fade>
           </div>
         </div>
         <div className={styles.awardsContainer}>
           <div className={styles.Awards}>
-            <InViewMonitor
+            <Fade
               intoViewMargin="10%"
               classNameNotInView="vis-hidden"
               classNameInView="animated titleIn"
@@ -87,7 +86,7 @@ const Award = () => {
               >
                 View project
               </Button>
-            </InViewMonitor>
+            </Fade>
           </div>
         </div>
       </div>

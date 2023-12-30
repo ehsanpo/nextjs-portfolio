@@ -1,5 +1,5 @@
 import React from "react";
-import InViewMonitor from "react-inview-monitor";
+import Fade from "@/ulti/animation";
 import Layout from "../components/layout";
 import SeO from "../components/seo";
 import Button from "../components/Button";
@@ -12,50 +12,41 @@ import matter from "gray-matter";
 
 const IndexPage = ({ portfolioBlockData }) => {
   return (
-    <Layout>
+    <>
       <SeO title="Digital Developer" />
       <Hero />
       <PortfolioBlock data={portfolioBlockData} onHome />
       <section className="no-bg">
-        <InViewMonitor
-          intoViewMargin="6%"
-          classNameNotInView="vis-hidden"
-          classNameInView="animated titleIn"
-          toggleClassNameOnInView
-        >
+        <Fade>
           <h2 className="title red">Developer Stacks</h2>
-        </InViewMonitor>
-
+        </Fade>
         <div className="wrapper">
           <Stack />
         </div>
         <div className="center">
-          <InViewMonitor
-            intoViewMargin="3%"
-            classNameNotInView="vis-hidden"
-            classNameInView="animated titleIn"
-            toggleClassNameOnInView
-          >
+          <Fade>
             <Button to="/skills" type="link" sec>
               See Skills
             </Button>
-          </InViewMonitor>
+          </Fade>
         </div>
       </section>
       <Award />
-    </Layout>
+    </>
   );
 };
 
 export default IndexPage;
 
 export async function getStaticProps() {
-  const files = fs.readdirSync("Content/Portfolio");
+  const files = fs
+    .readdirSync("content/Portfolio")
+    .filter((f) => !f.includes(".DS_Store"));
   const posts = files.map((fileName) => {
     const slug = fileName.replace(".md", "");
     const readFile = fs.readFileSync(
       `Content/Portfolio/${fileName}/${fileName}.md`,
-      "utf-8"
+      "utf-8",
     );
     const { data: frontmatter } = matter(readFile);
     frontmatter.fileName = fileName;
@@ -64,6 +55,10 @@ export async function getStaticProps() {
       data: frontmatter,
     };
   });
+  let clients = posts
+    .map((post) => post.data.client[0])
+    .filter((client, index, self) => self.indexOf(client) === index);
+
   let sources = posts.filter((post) => post.data.onHome === true);
-  return { props: { portfolioBlockData: sources } };
+  return { props: { portfolioBlockData: sources, clients } };
 }

@@ -7,7 +7,7 @@ import matter from "gray-matter";
 
 const Portfolio = ({ portfolioBlockData }) => {
   return (
-    <Layout>
+    <>
       <SeO title="Developer Portfolio" />
       <div className="page-header">
         <div className="wrapper">
@@ -33,18 +33,21 @@ const Portfolio = ({ portfolioBlockData }) => {
         </div>
       </section>
       <PortfolioBlock data={portfolioBlockData} />
-    </Layout>
+    </>
   );
 };
 export default Portfolio;
 
 export async function getStaticProps() {
-  const files = fs.readdirSync("Content/Portfolio");
+  const files = fs
+    .readdirSync("content/Portfolio")
+    .filter((f) => !f.includes(".DS_Store"));
+
   const posts = files.map((fileName) => {
     const slug = fileName.replace(".md", "");
     const readFile = fs.readFileSync(
       `Content/Portfolio/${fileName}/${fileName}.md`,
-      "utf-8"
+      "utf-8",
     );
     const { data: frontmatter } = matter(readFile);
     frontmatter.fileName = fileName;
@@ -55,7 +58,7 @@ export async function getStaticProps() {
   });
 
   const sortedpost = posts.sort(
-    (a, b) => new Date(b.data.date) - new Date(a.data.date)
+    (a, b) => new Date(b.data.date) - new Date(a.data.date),
   );
   return { props: { portfolioBlockData: sortedpost } };
 }

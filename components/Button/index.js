@@ -6,7 +6,7 @@ const Button = ({
   children,
   type = "button",
   to = "/",
-  onClick,
+  onClick = null,
 }) => {
   // const buttonLable = Math.random()
   // .toString(36)
