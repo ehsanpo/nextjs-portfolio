@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
-
+import Image from "next/image";
 type ValidPath = `/${string}`; // Type for valid paths starting with slash
 
 interface MenuItem {
@@ -18,6 +18,7 @@ const menu: MenuItem = {
 
 const Header = () => {
   const [headerButton, setHeaderButton] = useState(false);
+
   return (
     <header
       className="header"

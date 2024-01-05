@@ -40,11 +40,11 @@ const Section: React.FC<SectionProps> = ({
   }
 
   if (primary) {
-    paddingTopClass += " bg-primary text-primary-content";
+    paddingTopClass += " bg-color-1";
   }
 
   if (secondary) {
-    paddingTopClass += " bg-secondary text-secondary-content";
+    paddingTopClass += " bg-color-2";
   }
   if (reverse) {
     paddingTopClass += " flex-row-reverse";
@@ -55,11 +55,7 @@ const Section: React.FC<SectionProps> = ({
 
   return (
     <section className={combinedClasses}>
-      <div
-        className={`mx-auto container lg:justify-center  flex flex-col  ${maxWidthClass}`}
-      >
-        {children}
-      </div>
+      <div className={`wrapper    ${maxWidthClass}`}>{children}</div>
     </section>
   );
 };
