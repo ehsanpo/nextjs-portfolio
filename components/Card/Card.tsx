@@ -65,7 +65,7 @@ const Card: React.FC<CardProps> = ({
           </figure>
         )}
 
-        <div className={`${style.cardBody}`}>
+        <div className={style.cardBody}>
           {title && (
             <header>
               <Heading
@@ -86,13 +86,13 @@ const Card: React.FC<CardProps> = ({
           {children}
           {desc && <div>{desc}</div>}
           {tags && (
-            <div className="card-actions mt-1 justify-end">
+            <div className={style.tagsWrapper}>
               {tags.slice(0, 3).map((tag) => (
                 <div
                   key={tag}
-                  className="badge badge-outline  hover:text-primary-content"
+                  className="tags badge-outline  hover:text-primary-content"
                 >
-                  {tag}
+                  <span>{tag}</span>
                 </div>
               ))}
             </div>

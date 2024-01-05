@@ -19,6 +19,51 @@
   display: flex;
   flex-direction: column;
   background: var(--boxColor);
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  figure {
+    position: relative;
+    &::after {
+      transition: 0.45s all cubic-bezier(0.455, 0.03, 0.515, 0.755);
+      background-color: rgba(31, 15, 87, 0.8);
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      mix-blend-mode: lighten;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    &::before {
+      transition: 0.45s all cubic-bezier(0.455, 0.03, 0.515, 0.755);
+      background-color: rgb(230, 0, 92, 0.8);
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      mix-blend-mode: darken;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  &:hover figure {
+    &::after {
+      background-color: rgba(25, 37, 80, 0);
+    }
+    &::before {
+      background-color: rgb(240, 14, 46, 0);
+    }
+  }
+  .tagsWrapper {
+    justify-items: end;
+    display: flex;
+  }
 }
 .cardBody {
   display: flex;
