@@ -1,6 +1,6 @@
 import React from "react";
 
-import Seo from "../Seo";
+import Seo from "@/components/Seo";
 import Image from "next/image";
 import reactStringReplace from "react-string-replace";
 import Section from "../Section";

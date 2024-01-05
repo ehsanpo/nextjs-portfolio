@@ -1,11 +1,11 @@
 import React from "react";
 import Layout from "../components/layout";
-import SeO from "../components/seo";
+import Seo from "../components/seo";
 import EmailForm from "../components/EmailForm/EmailForm";
 
 const Portfolio = () => (
   <Layout>
-    <SeO title="Contact For a Job interview - Developer" />
+    <Seo title="Contact For a Job interview - Developer" />
     <div className="page-header">
       <div className="wrapper">
         <h1 className="display">Hire me</h1>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../layout";
-import Seo from "../seo";
+import Seo from "@/components/Seo";
 import { Link } from "next/link";
 import Button from "../Button";
 import Image from "next/image";

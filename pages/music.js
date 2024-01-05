@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import Layout from "../components/layout";
-import SeO from "../components/seo";
+import Seo from "../components/seo";
 import SpotifyPlayer from "react-spotify-player";
 import Fade from "@/ulti/animation";
 // import { LazyIframe } from "react-lazy-media";
@@ -18,7 +18,7 @@ const NotFoundPage = () => {
 
   return (
     <>
-      <SeO title="Music Producent" />
+      <Seo title="Music Producent" />
       <div className="page-header ">
         <div className="wrapper">
           <h1 className="display">Music</h1>

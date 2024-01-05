@@ -1,7 +1,7 @@
 import React from "react";
 import Fade from "@/ulti/animation";
 import Layout from "../components/layout";
-import SeO from "../components/seo";
+import Seo from "../components/seo";
 import Button from "../components/Button";
 import Stack from "../components/Stack";
 import Award from "../components/Award";
@@ -15,7 +15,7 @@ import matter from "gray-matter";
 const IndexPage = ({ portfolioBlockData, clients }) => {
   return (
     <>
-      <SeO title="Digital Developer" />
+      <Seo title="Digital Developer" />
       <Hero />
       <PortfolioBlock data={portfolioBlockData} onHome />
       <section className="no-bg">

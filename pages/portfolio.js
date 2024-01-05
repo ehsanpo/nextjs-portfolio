@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import Layout from "../components/layout";
-import SeO from "../components/seo";
+import Seo from "../components/seo";
 import PortfolioBlock from "../components/PortfolioBlock";
 import fs from "fs";
 import matter from "gray-matter";
@@ -9,7 +9,7 @@ import matter from "gray-matter";
 const Portfolio = ({ portfolioBlockData }) => {
   return (
     <>
-      <SeO title="Developer Portfolio" />
+      <Seo title="Developer Portfolio" />
       <div className="page-header">
         <div className="wrapper">
           <h1 className="display">Portfolio</h1>

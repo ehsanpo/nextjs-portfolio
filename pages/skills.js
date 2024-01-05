@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/layout";
-import SeO from "../components/seo";
+import Seo from "../components/seo";
 import "chart.js/auto";
 import { Radar } from "react-chartjs-2";
 import chart_data_overall from "../data/skills-data";
@@ -120,7 +120,7 @@ const Skills = () => {
 
   return (
     <>
-      <SeO title="Skills" />
+      <Seo title="Skills" />
       <div className="page-header">
         <div className="wrapper">
           <h1 className="display">Skills</h1>

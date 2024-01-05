@@ -1,7 +1,7 @@
 import React from "react";
 import fs from "fs";
 import matter from "gray-matter";
-import Template from "../../components/templates/blog.js";
+import Template from "../../components/template/blog.js";
 
 export async function getStaticPaths() {
   const files = fs
@@ -31,16 +31,16 @@ export async function getStaticProps({ params: { slug } }) {
   const next = files[index + 1] || files[0];
   const nextPostFile = fs.readFileSync(
     `content/Blog/${next}/${next}.md`,
-    "utf-8"
+    "utf-8",
   );
   const prev = files[index - 1] || files[files.length - 1];
   const prevPostFile = fs.readFileSync(
     `content/Blog/${prev}/${prev}.md`,
-    "utf-8"
+    "utf-8",
   );
   const currentPost = fs.readFileSync(
     `content/Blog/${slug}/${slug}.md`,
-    "utf-8"
+    "utf-8",
   );
 
   const { data: post, content } = matter(currentPost);

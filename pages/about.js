@@ -2,7 +2,7 @@
 import * as React from "react";
 import Loadable from "@loadable/component";
 import Layout from "../components/layout";
-import SeO from "../components/seo";
+import Seo from "../components/seo";
 import Award from "../components/Award";
 import Button from "../components/Button";
 import ImageAndText from "@/components/ImageAndText";
@@ -22,7 +22,7 @@ const Imagehover = dynamic(() => import("../components/Imagehover"), {
 const NotFoundPage = () => {
   return (
     <>
-      <SeO title="About Ehsan Pourhadi" />
+      <Seo title="About Ehsan Pourhadi" />
       <ImageAndText noMarg left image={<Imagehover />}>
         <h2>About Ehsan</h2>
         <p className="lead-text ">

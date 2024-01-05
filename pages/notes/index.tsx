@@ -1,7 +1,7 @@
 import React from "react";
 //import { Link } from "gatsby"
 
-import SeO from "@/components/Seo";
+import Seo from "@/components/Seo";
 import PostBlock from "@/components/PostBlock";
 import fs from "fs";
 import matter from "gray-matter";
@@ -9,7 +9,7 @@ import Section from "@/components/Section";
 
 const Portfolio = ({ data }: BlogProps) => (
   <>
-    <SeO title="Developer Blog" description="Web development journey" />
+    <Seo title="Developer Blog" description="Web development journey" />
 
     <div className="page-header">
       <div className="wrapper">
