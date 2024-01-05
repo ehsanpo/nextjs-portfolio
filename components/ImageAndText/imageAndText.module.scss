@@ -1,9 +1,13 @@
 .ImageAndText {
   flex-wrap: wrap;
   display: block;
+  padding: 32px 0;
   &.left {
     .itb_image {
       order: 2;
+      text-align: right;
+      justify-content: flex-end;
+      display: flex;
     }
   }
   .itb_image {
@@ -42,8 +46,9 @@
     margin: 64px 0;
   }
 }
-.no-marg {
+.noMarg {
   @media only screen and (min-width: 40em) {
-    margin: 0;
+    margin: -16px 0;
+    clip-path: none;
   }
 }
