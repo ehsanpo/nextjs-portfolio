@@ -9,7 +9,7 @@ import NextImage from "next/image";
 
 const IndexPage = ({ data, content }) => {
   const portfolioBlockData = data.post;
-  const permalink = "/images/" + data.permalink + "/";
+  const permalink = "/images/" + data.post.fileName + "/";
   const portfolioBlockBody = content;
   const [headerClose, setHeaderClose] = useState("");
 
@@ -41,7 +41,7 @@ const IndexPage = ({ data, content }) => {
       <div className="portfolio-page page">
         <div
           className={`portfolio-header ${headerClose} ${
-            portfolioBlockData.background_image[0] === ""
+            permalink + portfolioBlockData.background_image[0] === ""
               ? "no-header"
               : "header"
           } `}
@@ -81,9 +81,10 @@ const IndexPage = ({ data, content }) => {
             </div>
           </div>
           <Image
-            className="portfolio-image"
-            layout="fill"
+            className="portfolio-image-bg"
             objectFit="cover"
+            width={1920}
+            height={1080}
             src={permalink + portfolioBlockData.background_image[0]}
           />
 
@@ -164,7 +165,10 @@ const IndexPage = ({ data, content }) => {
                       </>
                     }
                   >
-                    <div>{portfolioBlockBody}</div>
+                    <div
+                      className="blog-content"
+                      dangerouslySetInnerHTML={{ __html: portfolioBlockBody }}
+                    />
                   </Box>
                 )}
 
@@ -178,9 +182,8 @@ const IndexPage = ({ data, content }) => {
                   }
                 >
                   {portfolioBlockData.bilder.map((bild) => (
-                    <div className="image-wrapper">
+                    <div className="image-wrapper" key={bild.id}>
                       <NextImage
-                        key={bild.id}
                         // style={{
                         // //   color: bild.colors.vibrant,
                         //   boxShadow: "0 0 30px " + bild.colors.vibrant,
