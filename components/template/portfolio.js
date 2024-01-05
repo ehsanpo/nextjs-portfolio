@@ -50,7 +50,7 @@ const IndexPage = ({ data, content }) => {
       setHeaderClose("portfolio-header--close");
       clearTimeout(open);
     }, 1000);
-  }, []);
+  }, [portfolioBlockData.video]);
 
   const inputChange = (e) => {
     setIsPlaying((prev) => !prev);
@@ -86,7 +86,7 @@ const IndexPage = ({ data, content }) => {
               {portfolioBlockData.logo && (
                 <Image
                   objectFit="cover"
-                  // alt="test"
+                  alt={portfolioBlockData.title}
                   className="portfolio-image"
                   width={350}
                   height={216}
@@ -133,6 +133,7 @@ const IndexPage = ({ data, content }) => {
             objectFit="cover"
             width={1920}
             height={1080}
+            alt={portfolioBlockData.title}
             src={permalink + portfolioBlockData.background_image[0]}
           />
 

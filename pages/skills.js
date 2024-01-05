@@ -178,7 +178,12 @@ const Skills = () => {
           {cert_data.map((cert) => {
             return (
               <div key={cert.name}>
-                <img src={`/images/cert/${cert.img}`}></img>
+                <Image
+                  width={320}
+                  height={320}
+                  alt={cert.name}
+                  src={`/images/cert/${cert.img}`}
+                ></Image>
                 <h4>{cert.name}</h4>
               </div>
             );

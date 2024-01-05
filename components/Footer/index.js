@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Footer = () => (
   <>
@@ -10,7 +11,7 @@ const Footer = () => (
             itemScope=""
             itemType="http://schema.org/Organization"
           >
-            <a href="/" className="footer-logo" aria-label="Ehsan Pourhadi">
+            <Link href="/" className="footer-logo" aria-label="Ehsan Pourhadi">
               <svg
                 width="40"
                 version="1.1"
@@ -30,7 +31,7 @@ const Footer = () => (
 		c0.3,0.3,0.5,0.7,0.5,1.1c0,0.4-0.2,0.8-0.5,1.1L12.4,25.6z"
                 ></path>
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="col soc-media">

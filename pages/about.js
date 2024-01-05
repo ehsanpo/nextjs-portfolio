@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import * as React from "react";
 import Loadable from "@loadable/component";
 import Layout from "../components/layout";
