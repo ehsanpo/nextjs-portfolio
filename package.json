@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export && next-export-optimize-images",
+    "build": "next build",
     "start": "next start",
     "copyimages": "node ./bin/copy-images.mjs",
     "deploy": "npm run build && touch ./out/.nojekyll && cp ./CNAME out/ && gh-pages -d out -t true",
