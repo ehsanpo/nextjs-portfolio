@@ -57,8 +57,10 @@ export async function getStaticProps() {
     };
   });
 
-  const sortedpost = posts.sort(
-    (a, b) => new Date(b.data.date) - new Date(a.data.date),
-  );
+  const sortedpost = posts.sort((a, b) => {
+    const yearA = parseInt(a.data.port_date);
+    const yearB = parseInt(b.data.port_date);
+    return yearB - yearA;
+  });
   return { props: { portfolioBlockData: sortedpost } };
 }
