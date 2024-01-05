@@ -4,7 +4,8 @@
 
 @font-face {
   font-family: "Tomorrow";
-  src: url("/fonts/Tomorrow-Regular.woff2") format("woff2"),
+  src:
+    url("/fonts/Tomorrow-Regular.woff2") format("woff2"),
     url("/fonts/Tomorrow-Regular.woff") format("woff"),
     url("/fonts/Tomorrow-Regular.ttf") format("opentype");
   font-style: normal;
@@ -95,7 +96,7 @@ h3 {
   font-size: 24px;
   line-height: 1.21;
   letter-spacing: -0.5px;
-  margin: 16px 0;
+  margin: 0;
   font-weight: bold;
 }
 
@@ -126,7 +127,7 @@ h6 {
 
 p {
   line-height: 1.5;
-  margin-bottom: 8px;
+  margin: 8px 0;
   font-size: 18px;
 }
 .f-l {

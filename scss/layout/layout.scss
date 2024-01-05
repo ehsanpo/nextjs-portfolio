@@ -27,6 +27,10 @@
     color: #fff;
   }
 }
+.no-clip {
+  clip-path: none;
+  margin: -24px;
+}
 ::selection {
   color: var(--c5);
   background: var(--p1);

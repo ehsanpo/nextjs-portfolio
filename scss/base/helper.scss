@@ -1,34 +1,34 @@
 .visually-hidden {
-	@extend %visuallyhidden;
+  @extend %visuallyhidden;
 }
 .cf {
-	@extend %clearfix;
+  @extend %clearfix;
 }
 .wrapper {
-	@extend %max_w;
-	//overflow: hidden;
+  @extend %max_w;
+  //overflow: hidden;
 }
 .wrapper-m {
-	@extend %max_w_m;
-	flex: none;
+  @extend %max_w_m;
+  flex: none;
 }
 .wrapper-l {
-	@extend %max_w_l;
-	flex: none;
-	box-sizing: border-box;
+  @extend %max_w_l;
+  flex: none;
+  box-sizing: border-box;
 }
 .v-center {
-	@extend %v_c;
+  @extend %v_c;
 }
 .v-center--f {
-	align-self: center;
+  align-self: center;
 }
 .yellow {
-	color: var(--yellow);
+  color: var(--yellow);
 }
 .blue {
-	color: var(--blue-color);
+  color: var(--blue-color);
 }
 .red {
-	color: var(--c5);
+  color: var(--c5);
 }
