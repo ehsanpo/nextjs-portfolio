@@ -29,7 +29,8 @@
     position: relative;
     &::after {
       transition: 0.45s all cubic-bezier(0.455, 0.03, 0.515, 0.755);
-      background-color: rgba(31, 15, 87, 0.8);
+
+      background-color: rgba(25, 37, 80, 0);
       content: "";
       display: block;
       width: 100%;
@@ -41,7 +42,7 @@
     }
     &::before {
       transition: 0.45s all cubic-bezier(0.455, 0.03, 0.515, 0.755);
-      background-color: rgb(230, 0, 92, 0.8);
+      background-color: rgb(240, 14, 46, 0);
       content: "";
       display: block;
       width: 100%;
@@ -54,10 +55,10 @@
   }
   &:hover figure {
     &::after {
-      background-color: rgba(25, 37, 80, 0);
+      background-color: rgba(31, 15, 87, 1);
     }
     &::before {
-      background-color: rgb(240, 14, 46, 0);
+      background-color: rgb(230, 0, 92, 1);
     }
   }
   .tagsWrapper {
