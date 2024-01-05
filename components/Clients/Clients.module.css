@@ -1,0 +1,43 @@
+/* Clients.module.css */
+.clientsContainer {
+  max-height: 200px;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.show {
+  max-height: 1200px; /* Adjust this value to suit your content height */
+}
+
+.hide {
+  max-height: 200px;
+}
+
+.animateInfiniteSlider {
+  animation: infiniteSlider 20s linear infinite;
+  display: flex;
+  width: calc(250px * 10);
+}
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  margin: 1.5rem;
+}
+@keyframes infiniteSlider {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 5));
+  }
+}
+
+/*
+
+0%: { transform: "translateX(0)" },
+  100%: {
+      transform: "translateX(calc(-250px * 5))",
+  },
+*/
