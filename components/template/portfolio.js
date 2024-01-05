@@ -12,6 +12,8 @@ const IndexPage = ({ data, content }) => {
   const permalink = "/images/" + data.post.fileName + "/";
   const portfolioBlockBody = content;
   const [headerClose, setHeaderClose] = useState("");
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [video, setVideo] = useState(false);
 
   // const { next, previous } = pageContext;
   // const nextArticle = next && (
@@ -27,6 +29,32 @@ const IndexPage = ({ data, content }) => {
   // 		{previous.frontmatter.title}
   // 	</Link>
   // );
+
+  function extractYouTubeVideoId(url) {
+    const regex =
+      /(?:\?v=|\/embed\/|\/v\/|\/vi\/|\/e\/|\/watch\?v=|\/watch\?feature=player_embedded&v=|\/watch\?feature=player_embedded&v=|\/watch\?v=|\/watch\?feature=player_embedded&v=|\/embed\/videoseries\?list=)([^#\&\?]*).*/;
+    const match = url.match(regex);
+    if (match && match[1]) {
+      return match[1];
+    } else {
+      return null;
+    }
+  }
+
+  useEffect(() => {
+    if (portfolioBlockData.video) {
+      setVideo(extractYouTubeVideoId(portfolioBlockData.video[0]));
+    }
+
+    let open = setTimeout(function () {
+      setHeaderClose("portfolio-header--close");
+      clearTimeout(open);
+    }, 1000);
+  }, []);
+
+  const inputChange = (e) => {
+    setIsPlaying((prev) => !prev);
+  };
 
   useEffect(() => {
     let open = setTimeout(function () {
@@ -68,6 +96,26 @@ const IndexPage = ({ data, content }) => {
             </div>
             <h2 className="display">{portfolioBlockData.title}</h2>
             <h3>{portfolioBlockData.tagline}</h3>
+            {video && (
+              <div
+                className={`video-wrapper mr-4 ${
+                  isPlaying ? "video-wrapper--fullscreen" : ""
+                }`}
+              >
+                <input type="checkbox" onChange={() => inputChange()} />
+                <div className="video">
+                  <iframe
+                    className="bg-video"
+                    src={`https://www.youtube.com/embed/${video}?autoplay=1&mute=1&controls=1&loop=1`}
+                    allowFullScreen
+                    allow="autoplay"
+                  />
+                </div>
+                <div className="text my-3 mr-2 max-w-md">
+                  <span data-text="Watch the video"></span>
+                </div>
+              </div>
+            )}
             <div className="links">
               {portfolioBlockData.case_link_url && (
                 <Button
