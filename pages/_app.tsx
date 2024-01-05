@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Script from "next/script";
+import Banner from "@/components/Banner";
 
 import { Rajdhani, Tomorrow } from "next/font/google";
 
@@ -40,6 +41,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Script src="https://scripts.withcabin.com/hello.js" />
+      <Banner />
       <Header />
       <Component {...pageProps} />
       <Footer />
