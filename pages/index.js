@@ -7,10 +7,12 @@ import Stack from "../components/Stack";
 import Award from "../components/Award";
 import Hero from "../components/Hero";
 import PortfolioBlock from "../components/PortfolioBlock";
+import Clients from "@/components/Clients";
+import Testimonial from "@/components/Testimonial";
 import fs from "fs";
 import matter from "gray-matter";
 
-const IndexPage = ({ portfolioBlockData }) => {
+const IndexPage = ({ portfolioBlockData, clients }) => {
   return (
     <>
       <SeO title="Digital Developer" />
@@ -32,6 +34,8 @@ const IndexPage = ({ portfolioBlockData }) => {
         </div>
       </section>
       <Award />
+      <Testimonial />
+      <Clients clients={clients} />
     </>
   );
 };
