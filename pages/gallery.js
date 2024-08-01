@@ -1,7 +1,7 @@
 import React from "react";
 //import { Link } from "gatsby"
 import Layout from "../components/layout";
-import Seo from "../components/seo";
+import Seo from "../components/Seo";
 import Parallax from "../components/ParallaxImage";
 
 const Portfolio = () => (

@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/layout";
-import Seo from "../components/seo";
+import Seo from "../components/Seo";
 import EmailForm from "../components/EmailForm/EmailForm";
 
 const Portfolio = () => (

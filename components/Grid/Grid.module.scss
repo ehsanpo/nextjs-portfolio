@@ -1,18 +1,27 @@
 .grid {
   position: relative;
   display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr)); /* Default to 1 column */
 
   &.cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1rem;
+    @media (min-width: 768px) {
+      /* Adjust the breakpoint as needed */
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
   }
 
   &.cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
+    @media (min-width: 768px) {
+      /* Adjust the breakpoint as needed */
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
   }
 
   .sm\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    @media (min-width: 640px) {
+      /* Adjust the breakpoint as needed */
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 }

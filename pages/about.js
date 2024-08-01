@@ -2,7 +2,7 @@
 import * as React from "react";
 import Loadable from "@loadable/component";
 import Layout from "../components/layout";
-import Seo from "../components/seo";
+import Seo from "../components/Seo";
 import Award from "../components/Award";
 import Button from "../components/Button";
 import ImageAndText from "@/components/ImageAndText";
@@ -36,9 +36,9 @@ const NotFoundPage = () => {
           <Heading element="h2" size="xl">
             Background
           </Heading>
-          <div className="md:w-3/5 md:pl-6">
+          <div>
             <div className="text-base leading-relaxed">
-              <span className=" mt-4">
+              <span>
                 My journey as a self-taught professional has equipped me with a
                 profound understanding of software development, design, and
                 multimedia. With a relentless drive for excellence, I have honed
@@ -70,7 +70,7 @@ const NotFoundPage = () => {
           <Heading element="h2" size="xl" className="md:w-2/5">
             Philosophy
           </Heading>
-          <div className="md:w-3/5 md:pl-6">
+          <div>
             <ul className="text-base leading-relaxed">
               <li>
                 <p>
@@ -131,45 +131,42 @@ const NotFoundPage = () => {
           <Heading element="h2" size="xl" className="md:w-2/5">
             Motivators
           </Heading>
-          <div className="md:w-3/5 md:pl-6">
-            <div className="text-base leading-relaxed">
-              <ul>
-                <li>
-                  <p>
-                    Tackling <strong>complex</strong> problems.
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    Empowering colleagues to contribute
-                    <strong> meaningful</strong> insights.
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    Constructing cohesive and{" "}
-                    <strong>scalable software </strong>
-                    architectures.
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    Optimizing workflows. <strong>Sharing expertise</strong>.
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    Establishing <strong>credibility</strong> and reliability.
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    Code is not just functional; it molds
-                    <strong>digital environments</strong>, driving innovation.
-                  </p>
-                </li>
-              </ul>
-            </div>
+          <div>
+            <ul className="text-base leading-relaxed">
+              <li>
+                <p>
+                  Tackling <strong>complex</strong> problems.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Empowering colleagues to contribute
+                  <strong> meaningful</strong> insights.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Constructing cohesive and <strong>scalable software </strong>
+                  architectures.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Optimizing workflows. <strong>Sharing expertise</strong>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Establishing <strong>credibility</strong> and reliability.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Code is not just functional; it molds
+                  <strong>digital environments</strong>, driving innovation.
+                </p>
+              </li>
+            </ul>
           </div>
         </div>
       </Section>

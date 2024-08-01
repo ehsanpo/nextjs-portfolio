@@ -41,11 +41,7 @@ const Experience: FC<ExperienceProps> = ({
             </Heading>
           )}
 
-          {description && (
-            <p className="my-4 px-2 text-xl leading-relaxed md:px-0">
-              {description}
-            </p>
-          )}
+          {description && <p>{description}</p>}
         </div>
 
         <div

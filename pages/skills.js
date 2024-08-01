@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Layout from "../components/layout";
-import Seo from "../components/seo";
+import Seo from "../components/Seo";
 import "chart.js/auto";
 import { Radar } from "react-chartjs-2";
 import chart_data_overall from "../data/skills-data";
@@ -182,7 +181,7 @@ const Skills = () => {
                   width={320}
                   height={320}
                   alt={cert.name}
-                  src={`/images/cert/${cert.img}`}
+                  src={`/img/cert/${cert.img}`}
                 ></Image>
                 <h4>{cert.name}</h4>
               </div>
@@ -194,7 +193,7 @@ const Skills = () => {
       <ImageAndText
         image={
           <Image
-            src="/images/cloudpractitioner2.jpg"
+            src="/img/cloudpractitioner2.jpg"
             alt="Self-Educated"
             width={700}
             height={390}
@@ -210,12 +209,7 @@ const Skills = () => {
       <ImageAndText
         left
         image={
-          <Image
-            src="/images/agile.jpeg"
-            alt="agile"
-            width={700}
-            height={390}
-          />
+          <Image src="/img/agile.jpeg" alt="agile" width={700} height={390} />
         }
       >
         <h2>Agile Development Processes</h2>
@@ -227,7 +221,7 @@ const Skills = () => {
       <ImageAndText
         image={
           <Image
-            src="/images/continuous-delivery.jpg"
+            src="/img/continuous-delivery.jpg"
             alt="continuous-delivery"
             width={700}
             height={390}

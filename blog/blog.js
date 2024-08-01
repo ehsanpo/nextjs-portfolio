@@ -1,14 +1,14 @@
 import React from "react";
 //import { Link } from "gatsby"
 import Layout from "../components/layout";
-import Seo from "../components/seo";
+import Seo from "../components/Seo";
 import Parallax from "../components/ParallaxImage";
 import PostBlock from "../components/PostBlock";
 import fs from "fs";
 import matter from "gray-matter";
 
 const Portfolio = ({ data }) => (
-  <Layout>
+  <>
     <Seo title="Developer Portfolio" />
     <Parallax filename="x2.jpg" />
     <div className="page-header">
@@ -41,7 +41,7 @@ const Portfolio = ({ data }) => (
       </div>
     </section>
     <PostBlock data={data} />
-  </Layout>
+  </>
 );
 export default Portfolio;
 

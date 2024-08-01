@@ -10,7 +10,6 @@ interface MenuItem {
 const menu: MenuItem = {
   Home: "/",
   About: "/about",
-  Notes: "/notes",
   Portfolio: "/portfolio",
   Skills: "/skills",
   Music: "/music",
@@ -54,7 +53,11 @@ const Header = () => {
           <ol>
             {Object.keys(menu).map((key) => (
               <li key={key}>
-                <Link className="btn--link" href={menu[key]}>
+                <Link
+                  className="btn--link"
+                  href={menu[key]}
+                  onClick={() => setHeaderButton(false)}
+                >
                   {key}
                 </Link>
               </li>

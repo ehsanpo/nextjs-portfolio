@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import Layout from "../components/layout";
-import Seo from "../components/seo";
+import Seo from "../components/Seo";
 import SpotifyPlayer from "react-spotify-player";
 import Fade from "@/ulti/animation";
 // import { LazyIframe } from "react-lazy-media";
