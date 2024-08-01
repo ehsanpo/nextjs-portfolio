@@ -35,6 +35,7 @@ const Award = () => {
                 <br />
               </div>
               <Button
+                type="link"
                 className="btn btn--b btn--link"
                 to="/portfolio/malmo-saluhall/"
               >
@@ -58,6 +59,7 @@ const Award = () => {
                 Shortlist in Media
               </div>
               <Button
+                type="link"
                 className="btn btn--b btn--link"
                 to="/portfolio/toolpool/"
               >
@@ -83,6 +85,7 @@ const Award = () => {
               <Button
                 className="btn btn--b btn--link"
                 to="/portfolio/toolpool/"
+                type="link"
               >
                 View project
               </Button>
